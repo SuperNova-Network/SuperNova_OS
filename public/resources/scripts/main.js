@@ -188,7 +188,7 @@ function setup(){
   setTimeout(function(){
     var elem=document.getElementById("loadscreen");
     elem.innerHTML=document.getElementById("loadscreenbuffer").innerHTML;
-    elem.style.backgroundColor="#268eee";
+    elem.style.backgroundColor="#111";
   },500);
   loadRepos();
   

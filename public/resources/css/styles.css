@@ -728,7 +728,7 @@ body.scaling .content{
   width: 24vw;
   height: 100%;
   border: none;
-  background-color: rgba(255,255,255,0.25);
+  background-color: rgb(255 255 255 / 84%);
   outline: none;
   text-indent: 1em;
   font-size: 1.2vw;
@@ -737,7 +737,7 @@ body.scaling .content{
 }
 
 #search:hover{
-  background-color:rgba(255,255,255,0.3);
+  background-color: rgb(200 195 195 / 84%);
 }
 
 #search[active="true"]{
