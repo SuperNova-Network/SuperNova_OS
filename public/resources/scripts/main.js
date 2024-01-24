@@ -62,37 +62,37 @@ document.getElementById("taskbar").className=lockTaskbar?"locked":"unlocked";
 document.body.classList.add(localStorage.getItem("viewmode") || "grid");
 
 var programData=[
-  {name: "Home", url: "https://picturelements.github.io/index", icon: {url:"https://picturelements.github.io/images/win_icons/home"}, keywords: "home,homepage,index,information"},
-  {name: "Sudoku Solver", url: "https://picturelements.github.io/sudokuSolver", icon: {url:"https://picturelements.github.io/images/win_icons/sudokusolver"}, keywords: "sudoku,solver,games,interactive"},
-  {name: "Mandelbrot", url: "https://picturelements.github.io/mandelbrot", icon: {url:"https://picturelements.github.io/images/win_icons/mandelbrot"}, keywords: "mandelbrot,julia,set,generator,fractal,interactive,math,canvas"},
-  {name: "Pitchfork Emporium", url: "https://pitchforkemporium.github.io/", icon: {url:"https://picturelements.github.io/images/win_icons/pitchforkemporium"}, keywords: "pitchfork,emporium,store,webshop,reddit,api"},
-  {name: "Boids", url: "https://aquaplexus.net/fishSim", icon: {url:"https://picturelements.github.io/images/win_icons/boids"}, keywords: "boids,craig,reynolds,interactive,fish,simulation"},
-  {name: "HTML Editor", url: "https://picturelements.github.io/editor", icon: {url:"https://picturelements.github.io/images/win_icons/htmleditor"}, keywords: "html,editor,css,interactive,gadget"},
-  {name: "Bézier", url: "https://picturelements.github.io/bezier", icon: {url:"https://picturelements.github.io/images/win_icons/bezier"}, keywords: "bezier,bézier,interactive,gadget"},
-  {name: "Proxy", url: "/proxy.html", icon: {url:"https://pngimg.com/d/cheese_PNG25292"}, keywords: "supernova,search,unblocker,proxy"},
-  {name: "Is it Prime?", url: "https://picturelements.github.io/isitprime", icon: {url:"https://picturelements.github.io/images/win_icons/isitprime"}, keywords: "prime,generator,math,information"},
-  {name: "N:th Prime", url: "https://picturelements.github.io/nthPrime", icon: {url:"https://picturelements.github.io/images/win_icons/nthprime"}, keywords: "nth,prime,generator,math,information"},
-  {name: "reddit Live 2.0", url: "https://picturelements.github.io/redditLive", icon: {url:"https://picturelements.github.io/images/win_icons/redditlive"}, keywords: "reddit,live,api,information"},
-  //{name: "Egg Hunt", url: "https://picturelements.github.io/egghunt", icon: {url:"https://picturelements.github.io/images/win_icons/egghunt"}, keywords: "egg,hunt,confused,travolta,game,reddit,easter"},
-  {name: "Game of Life", url: "https://aquaplexus.net/gameoflife", icon: {url:"https://picturelements.github.io/images/win_icons/gameoflife"}, keywords: "game,life,interactive,simulation,conway"},
-  {name: "Hit Lawyer", url: "https://picturelements.github.io/hitLawyer", icon: {url:"https://picturelements.github.io/images/win_icons/hitlawyer"}, keywords: "hit,lawyer,gadget"},
-  {name: "Fractal", url: "https://aquaplexus.net/fractal", icon: {url:"https://picturelements.github.io/images/win_icons/fractal"}, keywords: "fractal,generator,interactive,math"},
-  {name: "Multiples", url: "https://picturelements.github.io/multiples", icon: {url:"https://picturelements.github.io/images/win_icons/multiples"}, keywords: "multiples,math,interactive"},
-  {name: "Fireworks", url: "https://aquaplexus.net/firework", icon: {url:"https://picturelements.github.io/images/win_icons/fireworks"}, keywords: "fireworks,interactive,gadget,canvas"},
-  {name: "Phone Snake", url: "https://picturelements.github.io/phonesnake", icon: {url:"https://picturelements.github.io/images/win_icons/phonesnake"}, keywords: "phone,snake,game,interactive"},
-  //{name: "Back Dropper", url: "https://picturelements.github.io/backdropper", icon: {url:"https://picturelements.github.io/images/win_icons/backdropper"}, keywords: "back,dropper,library,background,canvas"},
-  {name: "Parrots", url: "https://picturelements.github.io/parrots", icon: {url:"https://picturelements.github.io/images/win_icons/parrots"}, keywords: "parrots,dank,reddit,party,epilepsy"},
-  //{name: "Smoke", url: "https://picturelements.github.io/smoke", icon: {url:"https://picturelements.github.io/images/win_icons/smoke"}, keywords: "smoke,3d,canvas,math"},
-  {name: "404.html", url: "https://picturelements.github.io/404", icon: {url:"https://picturelements.github.io/images/win_icons/404"}, keywords: "404,terminal,console,greentext"},
-  {name: "Matrix", url: "https://picturelements.github.io/matrix", icon: {url:"https://picturelements.github.io/images/win_icons/matrix"}, keywords: "matrix,math,multiplication"},
-  {name: "Sweeper", url:"https://picturelements.github.io/images/win_icons/https://picturelements.github.io/games/minesweeper/", icon: {url:"https://picturelements.github.io/images/win_icons/minesweeper"}, keywords: "mine,sweeper,game,interactive"},
-  {name: "Dodge", url: "https://picturelements.github.io/games/dodge", icon: {url:"https://picturelements.github.io/images/win_icons/dodge"}, keywords: "game,reddit,cursor,slide"},
-  {name: "about.txt", url: "https://picturelements.github.io/PeNote2?url=https://picturelements.github.io/textfiles/about.txt", icon: {file:"txt"}, keywords: "about,meta,info,text,document,txt,PeOS"},
-  {name: "Viewer", url: "", icon: {url:"https://picturelements.github.io/images/win_icons/viewer"}, keywords: ""},
-  {name: "Console", url: "", icon: {url:"https://picturelements.github.io/images/win_icons/console"}, keywords: ""},
-  {name: "Prompt", url: "", icon: {svg:"info_icon"}, keywords: ""},
-  {name: "Settings", url: "", icon: {svg:"cog_icon"}, keywords: ""},
-  {name: "File Explorer", url: "", icon: {url:"https://picturelements.github.io/images/win_icons/explorer"}, keywords: ""}
+  {name: "Home", url: "https://picturelements.github.io/index", icon: {url:"https://picturelements.github.io/images/win_icons/home.png"}, keywords: "home,homepage,index,information"},
+  {name: "Sudoku Solver", url: "https://picturelements.github.io/sudokuSolver", icon: {url:"https://picturelements.github.io/images/win_icons/sudokusolver.png"}, keywords: "sudoku,solver,games,interactive"},
+  {name: "Mandelbrot", url: "https://picturelements.github.io/mandelbrot", icon: {url:"https://picturelements.github.io/images/win_icons/mandelbrot.png"}, keywords: "mandelbrot,julia,set,generator,fractal,interactive,math,canvas"},
+  {name: "Pitchfork Emporium", url: "https://pitchforkemporium.github.io/", icon: {url:"https://picturelements.github.io/images/win_icons/pitchforkemporium.png"}, keywords: "pitchfork,emporium,store,webshop,reddit,api"},
+  {name: "Boids", url: "https://aquaplexus.net/fishSim", icon: {url:"https://picturelements.github.io/images/win_icons/boids.png"}, keywords: "boids,craig,reynolds,interactive,fish,simulation"},
+  {name: "HTML Editor", url: "https://picturelements.github.io/editor", icon: {url:"https://picturelements.github.io/images/win_icons/htmleditor.png"}, keywords: "html,editor,css,interactive,gadget"},
+  {name: "Bézier", url: "https://picturelements.github.io/bezier", icon: {url:"https://picturelements.github.io/images/win_icons/bezier.png"}, keywords: "bezier,bézier,interactive,gadget"},
+  {name: "Proxy", url: "/proxy.html", icon: {url:"https://yt3.googleusercontent.com/ytc/AIf8zZREaQtiNpMHOUS9IwUqKxnmcCylnX1yuc2UJ4DNuA=s176-c-k-c0x00ffffff-no-rj"}, keywords: "supernova,search,unblocker,proxy"},
+  {name: "Is it Prime?", url: "https://picturelements.github.io/isitprime", icon: {url:"https://picturelements.github.io/images/win_icons/isitprime.png"}, keywords: "prime,generator,math,information"},
+  {name: "N:th Prime", url: "https://picturelements.github.io/nthPrime", icon: {url:"https://picturelements.github.io/images/win_icons/nthprime.png"}, keywords: "nth,prime,generator,math,information"},
+  {name: "reddit Live 2.0", url: "https://picturelements.github.io/redditLive", icon: {url:"https://picturelements.github.io/images/win_icons/redditlive.png"}, keywords: "reddit,live,api,information"},
+  //{name: "Egg Hunt", url: "https://picturelements.github.io/egghunt", icon: {url:"https://picturelements.github.io/images/win_icons/egghunt.png"}, keywords: "egg,hunt,confused,travolta,game,reddit,easter"},
+  {name: "Game of Life", url: "https://aquaplexus.net/gameoflife", icon: {url:"https://picturelements.github.io/images/win_icons/gameoflife.png"}, keywords: "game,life,interactive,simulation,conway"},
+  {name: "Hit Lawyer", url: "https://picturelements.github.io/hitLawyer", icon: {url:"https://picturelements.github.io/images/win_icons/hitlawyer.png"}, keywords: "hit,lawyer,gadget"},
+  {name: "Fractal", url: "https://aquaplexus.net/fractal", icon: {url:"https://picturelements.github.io/images/win_icons/fractal.png"}, keywords: "fractal,generator,interactive,math"},
+  {name: "Multiples", url: "https://picturelements.github.io/multiples", icon: {url:"https://picturelements.github.io/images/win_icons/multiples.png"}, keywords: "multiples,math,interactive"},
+  {name: "Fireworks", url: "https://aquaplexus.net/firework", icon: {url:"https://picturelements.github.io/images/win_icons/fireworks.png"}, keywords: "fireworks,interactive,gadget,canvas"},
+  {name: "Phone Snake", url: "https://picturelements.github.io/phonesnake", icon: {url:"https://picturelements.github.io/images/win_icons/phonesnake.png"}, keywords: "phone,snake,game,interactive"},
+  //{name: "Back Dropper", url: "https://picturelements.github.io/backdropper", icon: {url:"https://picturelements.github.io/images/win_icons/backdropper.png"}, keywords: "back,dropper,library,background,canvas"},
+  {name: "Parrots", url: "https://picturelements.github.io/parrots", icon: {url:"https://picturelements.github.io/images/win_icons/parrots.png"}, keywords: "parrots,dank,reddit,party,epilepsy"},
+  //{name: "Smoke", url: "https://picturelements.github.io/smoke", icon: {url:"https://picturelements.github.io/images/win_icons/smoke.png"}, keywords: "smoke,3d,canvas,math"},
+  {name: "404.html", url: "https://picturelements.github.io/404", icon: {url:"https://picturelements.github.io/images/win_icons/404.png"}, keywords: "404,terminal,console,greentext"},
+  {name: "Matrix", url: "https://picturelements.github.io/matrix", icon: {url:"https://picturelements.github.io/images/win_icons/matrix.png"}, keywords: "matrix,math,multiplication"},
+  {name: "Sweeper", url:"https://picturelements.github.io/images/win_icons/https://picturelements.github.io/games/minesweeper/", icon: {url:"https://picturelements.github.io/images/win_icons/minesweeper.png"}, keywords: "mine,sweeper,game,interactive"},
+  {name: "Dodge", url: "https://picturelements.github.io/games/dodge", icon: {url:"https://picturelements.github.io/images/win_icons/dodge.png"}, keywords: "game,reddit,cursor,slide"},
+  {name: "about.txt", url: "https://picturelements.github.io/PeNote2?url=https://picturelements.github.io/textfiles/about.txt", icon: {file:"txt.png"}, keywords: "about,meta,info,text,document,txt,PeOS"},
+  {name: "Viewer", url: "", icon: {url:"https://picturelements.github.io/images/win_icons/viewer.png"}, keywords: ""},
+  {name: "Console", url: "", icon: {url:"https://picturelements.github.io/images/win_icons/console.png"}, keywords: ""},
+  {name: "Prompt", url: "", icon: {svg:"info_icon.png"}, keywords: ""},
+  {name: "Settings", url: "", icon: {svg:"cog_icon.png"}, keywords: ""},
+  {name: "File Explorer", url: "", icon: {url:"https://picturelements.github.io/images/win_icons/explorer.png"}, keywords: ""}
 ];
 pl=programData.length;
 var viewerID=pl-5,consoleID=pl-4,errID=pl-3,setID=pl-2,explorerID=pl-1;
@@ -1884,7 +1884,7 @@ setInterval(randWifi,3000);
 
 function setIcon(obj,elem){
   if (obj.url!=undefined){
-    elem.style.backgroundImage="url("+obj.url+".png)";
+    elem.style.backgroundImage="url("+obj.url;
   }else if (obj.svg!=undefined){
     var html=document.getElementById("svgbuffer").getElementsByClassName(obj.svg)[0].outerHTML;
     elem.innerHTML=html;
