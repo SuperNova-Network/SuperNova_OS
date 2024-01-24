@@ -63,7 +63,7 @@ document.body.classList.add(localStorage.getItem("viewmode") || "grid");
 
 var programData=[
 
-  {name: "Proxy", url: "/proxy.html", icon: {url:"https://yt3.googleusercontent.com/ytc/AIf8zZREaQtiNpMHOUS9IwUqKxnmcCylnX1yuc2UJ4DNuA=s176-c-k-c0x00ffffff-no-rj"}, keywords: "supernova,search,unblocker,proxy"},
+  {name: "Proxy", url: "/proxy.html", icon: {url:"SuperNova"}, keywords: "supernova,search,unblocker,proxy"},
 
   {name: "Home", url: "https://picturelements.github.io/index", icon: {url:"home"}, keywords: "home,homepage,index,information"},
   {name: "Sudoku Solver", url: "https://picturelements.github.io/sudokuSolver", icon: {url:"sudokusolver"}, keywords: "sudoku,solver,games,interactive"},
@@ -1886,7 +1886,7 @@ setInterval(randWifi,3000);
 
 function setIcon(obj,elem){
   if (obj.url!=undefined){
-    elem.style.backgroundImage="url(https://picturelements.github.io/images/win_icons/"+obj.url+".png)";
+    elem.style.backgroundImage="url(resources/media/app_icons/"+obj.url+".png)";
   }else if (obj.svg!=undefined){
     var html=document.getElementById("svgbuffer").getElementsByClassName(obj.svg)[0].outerHTML;
     elem.innerHTML=html;
