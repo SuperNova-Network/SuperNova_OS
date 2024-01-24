@@ -4,6 +4,7 @@ import http from 'node:http'
 import { createBareServer } from '@tomphttp/bare-server-node'
 import path from 'node:path'
 import cors from 'cors'
+import config from './config.js'
 import chalk from 'chalk';
 
 const __dirname = process.cwd()
@@ -11,6 +12,15 @@ const server = http.createServer()
 const app = express(server)
 const bareServer = createBareServer('/bare/')
 const PORT = 8080
+
+if (config.challenge) {
+  console.log("Password protection is enabled.")
+  console.log(chalk.red.bold('*-----------------------------*'));
+  console.log("Usernames are: " + Object.keys(config.users))
+  console.log("Passwords are: " + Object.values(config.users))
+  console.log(chalk.red.bold('*-----------------------------*'));
+  app.use(basicAuth(config))
+}
 
 app.use(express.json())
 app.use(express.urlencoded({ extended: true }))
