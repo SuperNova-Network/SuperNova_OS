@@ -65,7 +65,6 @@ var programData=[
 
   {name: "Proxy", url: "/proxy.html", icon: {url:"SuperNova"}, keywords: "supernova,search,unblocker,proxy"},
 
-  {name: "Home", url: "https://picturelements.github.io/index", icon: {url:"home"}, keywords: "home,homepage,index,information"},
   {name: "Sudoku Solver", url: "https://picturelements.github.io/sudokuSolver", icon: {url:"sudokusolver"}, keywords: "sudoku,solver,games,interactive"},
   {name: "Mandelbrot", url: "https://picturelements.github.io/mandelbrot", icon: {url:"mandelbrot"}, keywords: "mandelbrot,julia,set,generator,fractal,interactive,math,canvas"},
   {name: "Pitchfork Emporium", url: "https://pitchforkemporium.github.io/", icon: {url:"pitchforkemporium"}, keywords: "pitchfork,emporium,store,webshop,reddit,api"},
@@ -1057,7 +1056,7 @@ function restart(){
 
 function powerOff(evt){
   preventHide=false;
-  openPopup("Nope.","You fool! You can't exit PeOS. PeOS is love. PeOS is life.");
+  openPopup("Nope.","You fool! You can't exit SnOS. SnOS is love. SnOS is life.");
   hideSearch();
   evt.stopPropagation();
 }
