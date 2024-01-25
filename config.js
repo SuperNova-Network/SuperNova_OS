@@ -1,7 +1,7 @@
 const config = {
-  challenge: false, // Turn this to true if you want passwords on.
+  challenge: true, // Turn this to true if you want passwords on.
   users: {
-    aydins_proxy: 'password', // Username is 'aydins_proxy'. Password is 'password'.
+    devdevil: '123', // Username is 'aydins_proxy'. Password is 'password'.
   }
 }
 export default config
