@@ -27,6 +27,32 @@
             <input id="is" class="main-search" placeholder="Search with Google or enter address" type="text" />
         </form>
 
+        <a href="https://youtube.com/">youtube</a>
+
+        <script>
+          // Wait for the DOM to be fully loaded
+          document.addEventListener('DOMContentLoaded', function() {
+            // Select all the links in the document
+            const links = document.querySelectorAll('a');
+        
+            // Add a click event listener to each link
+            links.forEach(link => {
+              link.addEventListener('click', function(event) {
+                // Prevent the default behavior
+                event.preventDefault();
+        
+                // Get the URL of the clicked link
+                const url = this.getAttribute('href');
+        
+                // Process the URL through the proxy using the 'go' function
+                go(url);
+              });
+            });
+          });
+        </script>
+
+        
+
          <!---
       <div class="featured-text">
         <div class="featured-text-box"><h1>Featured</h1></div>
