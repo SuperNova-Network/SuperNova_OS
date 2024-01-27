@@ -28,9 +28,12 @@ app.use(cors())
 app.use(express.static(path.join(__dirname, 'public')))
 
 const routes = [
+    /*Main pages*/
   { path: '/', file: 'index.html' },
   { path: '/p', file: 'proxy.html' },
   { path: '/&', file: 'iframe.html' },
+  /*Proxy paths*/
+  { path: '/d', file: '/proxyApps/Discord.html' },
 ]
 
 app.get('/y/*', cors({ origin: false }), async (req, res, next) => {
