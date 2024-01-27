@@ -8,6 +8,7 @@
   <script src="https://picturelements.github.io/PeOS/console.js"></script>
   <link href="https://picturelements.github.io/PeOS/console.css" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="./resources/css/styles.css">
+  <link rel="icon" type="image/png" id="favicon">
 </head>
 
 <body oncontextmenu="return contextShow">
@@ -190,30 +191,57 @@
 
       <script>
         function aboutBlank() {
-        // Open a new window with about:blank
-        var newWindow = window.open('about:blank');
+          // Open a new window with about:blank
+          var newWindow = window.open('about:blank');
 
-        // Check if the new window is opened successfully
-        if (newWindow) {
-          // Insert an <iframe> element into the new window
-          var iframeElement = newWindow.document.createElement('iframe');
-          iframeElement.src = window.location.href;  // Set the source URL to the current website's URL
-          iframeElement.style.width = '100%';
-          iframeElement.style.height = '100%';
-          iframeElement.style.border = 'none';  // Remove iframe border
+          // Check if the new window is opened successfully
+          if (newWindow) {
+            // Insert an <iframe> element into the new window
+            var iframeElement = newWindow.document.createElement('iframe');
+            iframeElement.src = window.location.href;  // Set the source URL to the current website's URL
+            iframeElement.style.width = '100%';
+            iframeElement.style.height = '100%';
+            iframeElement.style.border = 'none';  // Remove iframe border
 
-          // Append the iframe to the body of the new window
-          newWindow.document.body.appendChild(iframeElement);
+            // Append the iframe to the body of the new window
+            newWindow.document.body.appendChild(iframeElement);
 
-          // Style the body to prevent scrolling
-          newWindow.document.body.style.margin = '0';
-          newWindow.document.body.style.overflow = 'hidden';
-        } else {
-          alert('Pop-up blocked. Please allow pop-ups for this site.');
-        };}
+            // Style the body to prevent scrolling
+            newWindow.document.body.style.margin = '0';
+            newWindow.document.body.style.overflow = 'hidden';
+          } else {
+            alert('Pop-up blocked. Please allow pop-ups for this site.');
+          };
+        }
       </script>
 
-      <button onclick="aboutBlank()" id="openWindowBtn">Open Iframe</button>
+      <p>Open this url in about:blank</p>
+      <button onclick="aboutBlank()" id="openWindowBtn">about:blank</button>
+
+      <!-- Favicon Input -->
+      <p>Favicon URL:</p>
+      <input type="text" id="faviconInput" placeholder="Enter Favicon URL">
+      <button onclick="changeFavicon()">Apply Favicon</button>
+
+      <!-- Title Input -->
+      <p>Title:</p>
+      <input type="text" id="titleInput" placeholder="Enter Title">
+      <button onclick="changeTitle()">Apply Title</button>
+
+      <script>
+        // Function to change the favicon
+        function changeFavicon() {
+          const faviconInput = document.getElementById("faviconInput");
+          const favicon = document.getElementById("favicon");
+          favicon.href = faviconInput.value;
+        }
+
+        // Function to change the title
+        function changeTitle() {
+          const titleInput = document.getElementById("titleInput");
+          document.title = titleInput.value;
+        }
+      </script>
 
       <br>
       <br>
