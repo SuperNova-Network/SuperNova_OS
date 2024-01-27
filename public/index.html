@@ -170,6 +170,21 @@
       <p>Color scheme</p>
       <div id="colorbar"></div>
       <br>
+
+      <p>Custom background URL:</p>
+      <input type="text" id="customBackgroundInput" placeholder="Enter URL">
+      <button onclick="changeBackground()">Apply Background</button>
+
+      <script>
+        // Function to change the background
+        function changeBackground() {
+          const customBackgroundInput = document.getElementById("customBackgroundInput");
+          const desktopwrapper = document.getElementById("desktopwrapper");
+          desktopwrapper.style.backgroundImage = "url('" + customBackgroundInput.value + "')";
+        }
+      </script>
+
+      <br>
       <p>Desktop background</p>
       <div id="backbar"></div>
       <div id="preview" class="grad backOverride"></div>

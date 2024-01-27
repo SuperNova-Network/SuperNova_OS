@@ -4,7 +4,7 @@ const input = document.getElementById('is')
 if (form && input) {
   form.addEventListener('submit', async (event) => {
     event.preventDefault()
-    processUrl(input.value, '/&')
+    processUrl(input.value, '/iframe.html')
   })
 }
 
@@ -31,7 +31,7 @@ function processUrl(value, path) {
 }
 
 function go(value) {
-  processUrl(value, '/&')
+  processUrl(value, '/iframe.html')
 }
 
 function now(value) {
