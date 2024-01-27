@@ -1333,6 +1333,8 @@ function colorSelect(){
   inner="<div class='backoption grad' "+(backId==0?"selected":"")+" onclick=selIco(0)></div>";
   for (var i=1;i<backgrounds.length+1;i++){
     inner+="<div class='backoption' "+(i==backId?"selected":"")+" onclick=selIco("+i+") style='background-image:url(https://picturelements.github.io/images/wallpapers/icons/"+(backgrounds[i-1].replace(".","Ico."))+")'></div>";
+        inner+="<div class='backoption' "+(i==backId?"selected":"")+" onclick=selIco("+i+") style='background-image:url(https://picturelements.github.io/images/wallpapers/icons/"+(backgrounds[i-1].replace(".","Ico."))+")'></div>";
+        
   }
   document.getElementById("backbar").innerHTML=inner;
 }

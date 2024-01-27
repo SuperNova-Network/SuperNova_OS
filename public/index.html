@@ -184,6 +184,24 @@
         }
       </script>
 
+      <!--Make a color rgb picker that changes the background-color for id "desktopwrapper"-->
+     
+      <input type="color" id="colorPicker" value="#ffffff">
+      <button onclick="changeColor()" id="submitColor">Submit</button>
+      
+      <script>
+        function changeColor() {
+          const colorPicker = document.getElementById('colorPicker');
+          const desktopWrapper = document.getElementById('desktopwrapper');
+          const submitButton = document.getElementById('submitColor');
+      
+          submitButton.addEventListener('click', function() {
+            desktopWrapper.style.backgroundColor = colorPicker.value;
+            desktopWrapper.style.backgroundImage = "none";
+          });
+        };
+      </script>
+
       <br>
       <p>Desktop background</p>
       <div id="backbar"></div>
