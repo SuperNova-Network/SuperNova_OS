@@ -4,7 +4,7 @@ const input = document.getElementById('is')
 if (form && input) {
   form.addEventListener('submit', async (event) => {
     event.preventDefault()
-    processUrl(input.value, '/iframe.html')
+    processUrl(input.value) /* Change to : processUrl(input.value, '/iframe.html') if you want a url variable.*/
   })
 }
 
