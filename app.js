@@ -5,6 +5,7 @@ import { uvPath } from "@titaniumnetwork-dev/ultraviolet";
 import { join } from "node:path";
 import { hostname } from "node:os";
 import { fileURLToPath } from "url";
+import open from 'open';
 
 const publicPath = fileURLToPath(new URL("./public/", import.meta.url));
 
@@ -42,7 +43,7 @@ let port = parseInt(process.env.PORT || "");
 
 if (isNaN(port)) port = 8080;
 
-server.on("listening", () => {
+server.on("listening", async () => {
   const address = server.address();
 
   // by default we are listening on 0.0.0.0 (every interface)
@@ -55,6 +56,9 @@ server.on("listening", () => {
       address.family === "IPv6" ? `[${address.address}]` : address.address
     }:${address.port}`
   );
+
+  // Open the server address in the default browser
+  await open(`http://localhost:${address.port}`);
 });
 
 // https://expressjs.com/en/advanced/healthcheck-graceful-shutdown.html
