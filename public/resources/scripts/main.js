@@ -40,7 +40,7 @@ var colors=[
   ["#999","#aaa","#ddd","#e8e8e8 0%,#a0a0a0 50%,#1f1f1f 100%"]
 ];
 var specCols=["#68c464 0%,#1c5d9e 38%,#50005f 100%"];
-var backgrounds=["Abstract.jpg","Bouncy.jpg","Gimignano.jpg","Flower.jpg","Bucks.jpg","Leaf.jpg","LonelyRoad.jpg","Flowers.jpg","Mandelbrot.png","Match.jpg"];
+var backgrounds=["Abstract.jpg","Bouncy.jpg","Gimignano.jpg","Flower.jpg","Bucks.jpg","Leaf.jpg","LonelyRoad.jpg","Flowers.jpg","Mandelbrot.png","Match.jpg","bmw.png"];
 contextShow=false,next=null;
 
 //load variables from localStorage
@@ -226,7 +226,7 @@ function genCog(r){
 }
 
 function setCols(){
-  document.getElementById("specCols").innerHTML=".specColor{background-color:"+colors[colId][0]+"; border-color:"+colors[colId][0]+";}\n.window[active='true'] .infoCol, .normCol{background-color:"+colors[colId][1]+";}\n.borderCol{border-color:"+colors[colId][2]+" !important;}\n.grad{background: -moz-linear-gradient(-45deg, "+colors[colId][3]+"); background: -webkit-linear-gradient(-45deg, "+colors[colId][3]+"); background: linear-gradient(135deg, "+colors[colId][3]+"); background: linear-gradient(135deg, "+colors[colId][3]+");}"+(backId!=0?".backOverride{background:none; background-image:url(https://picturelements.github.io/images/wallpapers/"+backgrounds[backId-1]+");}":"")+"";
+  document.getElementById("specCols").innerHTML=".specColor{background-color:"+colors[colId][0]+"; border-color:"+colors[colId][0]+";}\n.window[active='true'] .infoCol, .normCol{background-color:"+colors[colId][1]+";}\n.borderCol{border-color:"+colors[colId][2]+" !important;}\n.grad{background: -moz-linear-gradient(-45deg, "+colors[colId][3]+"); background: -webkit-linear-gradient(-45deg, "+colors[colId][3]+"); background: linear-gradient(135deg, "+colors[colId][3]+"); background: linear-gradient(135deg, "+colors[colId][3]+");}"+(backId!=0?".backOverride{background:none; background-image:url(/resources/media/wallpapers/"+backgrounds[backId-1]+");}":"")+"";
 }
 
 function addWindow(id,title,contStr,w,h,type){
@@ -1329,7 +1329,7 @@ function colorSelect(){
   
   inner="<div class='backoption grad' "+(backId==0?"selected":"")+" onclick=selIco(0)></div>";
   for (var i=1;i<backgrounds.length+1;i++){
-    inner+="<div class='backoption' "+(i==backId?"selected":"")+" onclick=selIco("+i+") style='background-image:url(https://picturelements.github.io/images/wallpapers/icons/"+(backgrounds[i-1].replace(".","Ico."))+")'></div>";
+    inner+="<div class='backoption' "+(i==backId?"selected":"")+" onclick=selIco("+i+") style='background-image:url(/resources/media/wallpapers/icons/"+(backgrounds[i-1].replace(".","Ico."))+")'></div>";
   }
   document.getElementById("backbar").innerHTML=inner;
 }
