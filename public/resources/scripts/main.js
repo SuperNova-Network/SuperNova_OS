@@ -229,6 +229,20 @@ function setCols(){
   document.getElementById("specCols").innerHTML=".specColor{background-color:"+colors[colId][0]+"; border-color:"+colors[colId][0]+";}\n.window[active='true'] .infoCol, .normCol{background-color:"+colors[colId][1]+";}\n.borderCol{border-color:"+colors[colId][2]+" !important;}\n.grad{background: -moz-linear-gradient(-45deg, "+colors[colId][3]+"); background: -webkit-linear-gradient(-45deg, "+colors[colId][3]+"); background: linear-gradient(135deg, "+colors[colId][3]+"); background: linear-gradient(135deg, "+colors[colId][3]+");}"+(backId!=0?".backOverride{background:none; background-image:url(/resources/media/wallpapers/"+backgrounds[backId-1]+");}":"")+"";
 }
 
+function factoryReset(){
+  document.write("Your system is being reset. Please wait...");
+
+  setTimeout(function() {
+    document.body.innerHTML = ''; // Remove all elements
+    document.body.style.backgroundColor = 'black'; // Change background color to black
+  
+    setTimeout(function() {
+      localStorage.clear();
+      location.reload();
+    }, 700);
+  }, 1000);
+}
+
 function addWindow(id,title,contStr,w,h,type){
   oftenUsed[id]++;
   localStorage.setItem("oftenUsed",oftenUsed);

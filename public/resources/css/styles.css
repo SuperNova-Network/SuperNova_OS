@@ -501,7 +501,7 @@ body.scaling .content{
 #settingscontainer button{
   text-indent:0;
   line-height:1.5vw;
-  width:10vw;
+  width: 11vw;
 }
 
 #settingscontainer button:hover{
