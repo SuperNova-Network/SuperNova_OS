@@ -31,7 +31,7 @@ function processUrl(value, path) {
 }
 
 function go(value) {
-  processUrl(value, '/iframe.html')
+  processUrl(value, false) /* Change to : processUrl(value, '/iframe.html') if you want a url variable.*/
 }
 
 function now(value) {
