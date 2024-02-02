@@ -62,10 +62,7 @@ document.getElementById("taskbar").className=lockTaskbar?"locked":"unlocked";
 document.body.classList.add(localStorage.getItem("viewmode") || "grid");
 
 var programData=[
-
-  {name: "Proxy", url: "/algebra.html", icon: {url:"SuperNova"}, keywords: "supernova,search,unblocker,proxy"},
-  {name: "nug.exe", url: "/resources/media/videos/Chicken_Nugget_Song.mp4", icon: {url:"image-removebg-preview"}, keywords: "video,food,yum,chicken"},
-
+  {name: "SuperNova", url: "/algebra.html", icon: {url:"SuperNova"}, keywords: "proxy,unblocker,supernova,algebra,calculator,math,interactive,canvas,graph"},
   {name: "Sudoku Solver", url: "https://picturelements.github.io/sudokuSolver", icon: {url:"sudokusolver"}, keywords: "sudoku,solver,games,interactive"},
   {name: "Mandelbrot", url: "https://picturelements.github.io/mandelbrot", icon: {url:"mandelbrot"}, keywords: "mandelbrot,julia,set,generator,fractal,interactive,math,canvas"},
   {name: "Pitchfork Emporium", url: "https://pitchforkemporium.github.io/", icon: {url:"pitchforkemporium"}, keywords: "pitchfork,emporium,store,webshop,reddit,api"},
@@ -89,7 +86,7 @@ var programData=[
   {name: "Matrix", url: "https://picturelements.github.io/matrix", icon: {url:"matrix"}, keywords: "matrix,math,multiplication"},
   {name: "Sweeper", url:"https://picturelements.github.io/games/minesweeper/", icon: {url:"minesweeper"}, keywords: "mine,sweeper,game,interactive"},
   {name: "Dodge", url: "https://picturelements.github.io/games/dodge", icon: {url:"dodge"}, keywords: "game,reddit,cursor,slide"},
-  {name: "about.txt", url: "https://picturelements.github.io/PeNote2?url=https://picturelements.github.io/textfiles/about.txt", icon: {file:"txt"}, keywords: "about,meta,info,text,document,txt,PeOS"},
+  {name: "about.txt", url: "https://picturelements.github.io/PeNote2?url=https://picturelements.github.io/textfiles/about.txt", icon: {file:"txt"}, keywords: "about,meta,info,text,document,txt,SnOS"},
   {name: "Viewer", url: "", icon: {url:"viewer"}, keywords: ""},
   {name: "Console", url: "", icon: {url:"console"}, keywords: ""},
   {name: "Prompt", url: "", icon: {svg:"info_icon"}, keywords: ""},
@@ -1333,8 +1330,6 @@ function colorSelect(){
   inner="<div class='backoption grad' "+(backId==0?"selected":"")+" onclick=selIco(0)></div>";
   for (var i=1;i<backgrounds.length+1;i++){
     inner+="<div class='backoption' "+(i==backId?"selected":"")+" onclick=selIco("+i+") style='background-image:url(https://picturelements.github.io/images/wallpapers/icons/"+(backgrounds[i-1].replace(".","Ico."))+")'></div>";
-        inner+="<div class='backoption' "+(i==backId?"selected":"")+" onclick=selIco("+i+") style='background-image:url(https://picturelements.github.io/images/wallpapers/icons/"+(backgrounds[i-1].replace(".","Ico."))+")'></div>";
-        
   }
   document.getElementById("backbar").innerHTML=inner;
 }
@@ -1640,7 +1635,7 @@ function loadFiles(url,elem,file){
       createLink(elem,"file tableheader hideable","return;","Name","File type","Size");
       for (var i in doc){
         if (doc[i].type=="dir"){
-          createLink(elem,"file dir","loadFilesRelay(this)",doc[i].name,"PeOS Folder","",doc[i].url);
+          createLink(elem,"file dir","loadFilesRelay(this)",doc[i].name,"SnOS Folder","",doc[i].url);
         }
       }
       for (var i in doc){
