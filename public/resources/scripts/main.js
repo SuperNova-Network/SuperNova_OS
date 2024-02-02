@@ -40,7 +40,7 @@ var colors=[
   ["#999","#aaa","#ddd","#e8e8e8 0%,#a0a0a0 50%,#1f1f1f 100%"]
 ];
 var specCols=["#68c464 0%,#1c5d9e 38%,#50005f 100%"];
-var backgrounds=["Abstract.jpg","Bouncy.jpg","Gimignano.jpg","Flower.jpg","Bucks.jpg","Leaf.jpg","LonelyRoad.jpg","Flowers.jpg","Mandelbrot.png","Match.jpg","bmw.png"];
+var backgrounds=["Adventure_Time.gif","Bouncy.jpg","Gimignano.jpg","Flower.jpg","Bucks.jpg","Leaf.jpg","LonelyRoad.jpg","Flowers.jpg","Mandelbrot.png","Match.jpg","bmw.png"];
 contextShow=false,next=null;
 
 //load variables from localStorage
