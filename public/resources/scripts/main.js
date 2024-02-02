@@ -63,7 +63,7 @@ document.body.classList.add(localStorage.getItem("viewmode") || "grid");
 
 var programData=[
 
-  {name: "Proxy", url: "/proxy.html", icon: {url:"SuperNova"}, keywords: "supernova,search,unblocker,proxy"},
+  {name: "Proxy", url: "/algebra.html", icon: {url:"SuperNova"}, keywords: "supernova,search,unblocker,proxy"},
   {name: "nug.exe", url: "/resources/media/videos/Chicken_Nugget_Song.mp4", icon: {url:"image-removebg-preview"}, keywords: "video,food,yum,chicken"},
 
   {name: "Sudoku Solver", url: "https://picturelements.github.io/sudokuSolver", icon: {url:"sudokusolver"}, keywords: "sudoku,solver,games,interactive"},
