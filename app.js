@@ -6,7 +6,7 @@ import { join } from "node:path";
 import { hostname } from "node:os";
 import { fileURLToPath } from "url";
 import open from 'open';
-// import basicAuth from 'express-basic-auth'; // import the express-basic-auth package
+// import basicAuth from 'express-basic-auth';
 
 const publicPath = fileURLToPath(new URL("./public/", import.meta.url));
 const bare = createBareServer("/bare/");
