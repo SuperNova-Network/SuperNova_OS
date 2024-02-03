@@ -62,7 +62,7 @@ document.getElementById("taskbar").className=lockTaskbar?"locked":"unlocked";
 document.body.classList.add(localStorage.getItem("viewmode") || "grid");
 
 var programData=[
-  {name: "SuperNova", url: "/algebra.html", icon: {url:"SuperNova"}, keywords: "proxy,unblocker,supernova,algebra,calculator,math,interactive,canvas,graph"},
+  {name: "SuperNova", url: "/$.html", icon: {url:"SuperNova"}, keywords: "proxy,unblocker,supernova,$,calculator,math,interactive,canvas,graph"},
   {name: "Sudoku Solver", url: "https://picturelements.github.io/sudokuSolver", icon: {url:"sudokusolver"}, keywords: "sudoku,solver,games,interactive"},
   {name: "Mandelbrot", url: "https://picturelements.github.io/mandelbrot", icon: {url:"mandelbrot"}, keywords: "mandelbrot,julia,set,generator,fractal,interactive,math,canvas"},
   {name: "Pitchfork Emporium", url: "https://pitchforkemporium.github.io/", icon: {url:"pitchforkemporium"}, keywords: "pitchfork,emporium,store,webshop,reddit,api"},
