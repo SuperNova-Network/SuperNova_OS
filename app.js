@@ -6,11 +6,18 @@ import { join } from "node:path";
 import { hostname } from "node:os";
 import { fileURLToPath } from "url";
 import open from 'open';
+import basicAuth from 'express-basic-auth'; // import the express-basic-auth package
 
 const publicPath = fileURLToPath(new URL("./public/", import.meta.url));
 
 const bare = createBareServer("/bare/");
 const app = express();
+
+app.use(basicAuth({ // add the basicAuth middleware
+    users: { 'admin': 'password' }, // replace 'admin' and 'password' with your desired username and password
+    challenge: false,
+    realm: 'My Application',
+}));
 
 app.use(express.static(publicPath));
 app.use("/uv/", express.static(uvPath));
