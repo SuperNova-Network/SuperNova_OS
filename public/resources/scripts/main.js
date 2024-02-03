@@ -95,7 +95,9 @@ var programData=[
 ];
 pl=programData.length;
 var viewerID=pl-5,consoleID=pl-4,errID=pl-3,setID=pl-2,explorerID=pl-1;
-var defaultPage="https://api.github.com/repos/PicturElements/picturelements.github.io/contents";
+var defaultPage="https://api.github.com/repos/SuperNova-Network/SuperNova-DY/contents"; // go to https://api.github.com/users/SuperNova-Network/repos and find "contents_url" to get the url for the default page. EX: https://media.discordapp.net/attachments/828071279424307221/1203153358597394534/image.png?ex=65d00ee2&is=65bd99e2&hm=9a4f32904842838ea9a40c8f45e2b860491aee8c4b55cb6fa4b7f995f5f64aff&=&format=webp&quality=lossless&width=1439&height=206
+// https://web.postman.co/
+
 
 document.body.addEventListener("mousedown",function(event){winSelect=true; xStart=event.clientX; yStart=event.clientY; hideSearch();});
 document.body.addEventListener("mousemove",function(event){try{moveWindow(event);}catch(e){}});
@@ -1583,7 +1585,7 @@ function loadRepos(){
       }
     }
   };
-  xhttp.open("GET","https://api.github.com/users/PicturElements/repos",true);
+  xhttp.open("GET","https://api.github.com/users/SuperNova-Network/repos",true); // https://web.postman.co/
   xhttp.send();
 }
 
@@ -1823,7 +1825,7 @@ function contextNewDir(openNew){
 
 function contextOpenHTML(){
   var elem=getExplorerItem();
-  var url=elem.getAttribute("url").replace("https://raw.githubusercontent.com/PicturElements/","https://").replace("/master","").split("=")[1];
+  var url=elem.getAttribute("url").replace("https://raw.githubusercontent.com/DevDevil-RBLX/","https://").replace("/master","").split("=")[1];
   var title=elem.getElementsByClassName("title")[0].innerHTML;
   addWindow(viewerID,title,url,DEF_WIN_W,DEF_WIN_H,"html");
 }
@@ -1859,7 +1861,7 @@ function consoleOpenWin(str){
     }
     openPopup("Program Launch Error","There is no program with name '"+str+"' on this device.");
   }else{
-    if (str.endsWith(".html")&&str.includes("picturelements.github.io")){
+    if (str.endsWith(".html")&&str.includes("DevDevil-RBLX.github.io")){
       addWindow(viewerID,urlToDir(origStr),apiToHttps(origStr),DEF_WIN_W,DEF_WIN_H,"html");
     }else{
       addWindow(explorerID,null,origStr,DEF_WIN_W,DEF_WIN_H);
@@ -1884,7 +1886,7 @@ function apiToRaw(url){
 }
 
 function apiToHttps(url){
-  return (url.replace("api.github.com/repos/PicturElements/","").replace("/contents","")).split("?")[0];
+  return (url.replace("api.github.com/repos/DevDevil-RBLX/","").replace("/contents","")).split("?")[0];
 }
 
 //loadFiles("https://api.github.com/repos/PicturElements/picturelements.github.io/contents");

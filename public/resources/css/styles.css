@@ -53,8 +53,8 @@ body.scaling .content{
   top:100px;
   width:400px;
   height:300px;
-  background-color: rgb(95 95 95 / 40%);
-  border: 0.1vw solid #565a5a;
+  background-color: rgb(255 255 255 / 6%);
+  border: 0.1vw solid #ffffff26;
   z-index:1;
 }
 
@@ -275,11 +275,11 @@ body.scaling .content{
   padding-left: 0.5em;
   border-left: 1px solid white;
 }
-.doc-viewer .wintitle:after{content:"PeNote text editor"}
-.audio-viewer .wintitle:after{content:"PeOS audio player"}
-.font-viewer .wintitle:after{content:"PeOS font preview"}
-.img-viewer .wintitle:after{content:"PeOS image viewer"}
-.html-viewer .wintitle:after{content:"PeOS HTML viewer"}
+.doc-viewer .wintitle:after{content:"SnNote text editor"}
+.audio-viewer .wintitle:after{content:"SnOS audio player"}
+.font-viewer .wintitle:after{content:"SnOS font preview"}
+.img-viewer .wintitle:after{content:"SnOS image viewer"}
+.html-viewer .wintitle:after{content:"SnOS HTML viewer"}
 
 .infobar .icon {
   display: block;
