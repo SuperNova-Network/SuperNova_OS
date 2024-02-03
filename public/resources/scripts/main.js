@@ -80,7 +80,7 @@ var programData=[
   {name: "Fireworks", url: "https://aquaplexus.net/firework", icon: {url:"fireworks"}, keywords: "fireworks,interactive,gadget,canvas"},
   {name: "Phone Snake", url: "https://picturelements.github.io/phonesnake", icon: {url:"phonesnake"}, keywords: "phone,snake,game,interactive"},
   //{name: "Back Dropper", url: "https://picturelements.github.io/backdropper", icon: {url:"backdropper"}, keywords: "back,dropper,library,background,canvas"},
-  {name: "Parrots", url: "https://picturelements.github.io/parrots", icon: {url:"parrots"}, keywords: "parrots,dank,reddit,party,epilepsy"},
+  {name: "EaglerCraft", url: "http://localhost:8080/supernova/hvtrs8%2F-sf5%3B2e.eivhwb%2Cim%2Fxj486of4nfe%2F", icon: {url:"parrots"}, keywords: "minecraft,building,eaglercraft,game,interactive"},
   //{name: "Smoke", url: "https://picturelements.github.io/smoke", icon: {url:"smoke"}, keywords: "smoke,3d,canvas,math"},
   {name: "404.html", url: "https://picturelements.github.io/404", icon: {url:"404"}, keywords: "404,terminal,console,greentext"},
   {name: "Matrix", url: "https://picturelements.github.io/matrix", icon: {url:"matrix"}, keywords: "matrix,math,multiplication"},
