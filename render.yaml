@@ -1,5 +1,7 @@
 services:
-  - type: web
-    name: supernova
-    env: docker
-    plan: free
+- type: web
+  name: my-app
+  env: node
+  buildCommand: npm install
+  startCommand: npm start
+  plan: free
