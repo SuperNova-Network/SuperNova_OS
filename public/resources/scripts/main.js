@@ -58,18 +58,21 @@ lockTaskbar=localStorage.getItem("lockTaskbar")!="0";
 document.getElementById("taskbar").className=lockTaskbar?"locked":"unlocked";
 document.body.classList.add(localStorage.getItem("viewmode") || "grid");
 
+const service = "supernova"; 
+
 var programData=[ //name, url, icon, keywords
   {name: "SuperNova", url: "/$.html", icon: {url:"SuperNova"}, keywords: "proxy,unblocker,supernova,$,calculator,math,interactive,canvas,graph"},
-  {name: "Minecraft", url: "/supernova/hvtrs8%2F-sf5%3B2e.eivhwb%2Cim%2Fxj486of4nfe%2F", icon: {url:"Minecraft"}, keywords: "minecraft,building,eaglercraft,game,interactive"},
-  {name: "YouTube", url: "/supernova/hvtrs8%2F-wuw%2Cymuvu%60e%2Ccmm-", icon: {url:"Youtube"}, keywords: "prime,generator,math,information"},
-  {name: "TikTok", url: "/supernova/hvtrs8%2F-wuw%2Ctkkvoi.aoo%2F", icon: {url:"TikTok"}, keywords: "tiktok,video,interactive"},
+  {name: "Minecraft", url: `/${service}/hvtrs8%2F-sf5%3B2e.eivhwb%2Cim%2Fxj486of4nfe%2F`, icon: {url:"Minecraft"}, keywords: "minecraft,building,eaglercraft,game,interactive"},
+  {name: "YouTube", url: `/${service}/hvtrs8%2F-wuw%2Cymuvu%60e%2Ccmm-`, icon: {url:"Youtube"}, keywords: "prime,generator,math,information"},
+  {name: "TikTok", url: `/${service}/hvtrs8%2F-wuw%2Ctkkvoi.aoo%2F`, icon: {url:"TikTok"}, keywords: "tiktok,video,interactive"},
+  {name: "Crazy  Games", url: `/${service}/hvtrs8%2F-wuw%2Ccpaxyeaoeq.aoo%2F`, icon: {url:"CrazyGames"}, keywords: "bezier,bézier,interactive,gadget"},
+  {name: "Shell Shockers", url: `/${service}/hvtrs8%2F-wuw%2Ccpaxyeaoeq.aoo%2Feaoe-sjenlqhmciepsko`, icon: {url:"Shell_Shockers_icon"}, keywords: "pitchfork,emporium,store,webshop,reddit,api"},
+  {name: "Reddit", url: `/${service}/hvtrs8%2F-wuw%2Crgdfiv.aoo%2F%3Drft%3F57545`, icon: {url:"Reddit"}, keywords: "reddit,interactive"},
+  {name: "Discord", url: "/&.html", icon: {url:"Discord"}, keywords: "discord,interactive,chat,voice,video"},
 
 
-  {name: "Pitchfork Emporium", url: "https://pitchforkemporium.github.io/", icon: {url:"pitchforkemporium"}, keywords: "pitchfork,emporium,store,webshop,reddit,api"},
-  {name: "Sudoku Solver", url: "https://picturelements.github.io/sudokuSolver", icon: {url:"sudokusolver"}, keywords: "sudoku,solver,games,interactive"},  {name: "Pitchfork Emporium", url: "https://pitchforkemporium.github.io/", icon: {url:"pitchforkemporium"}, keywords: "pitchfork,emporium,store,webshop,reddit,api"},
-  {name: "Boids", url: "https://aquaplexus.net/fishSim", icon: {url:"boids"}, keywords: "boids,craig,reynolds,interactive,fish,simulation"},
+  {name: "Sudoku Solver", url: "https://picturelements.github.io/sudokuSolver", icon: {url:"sudokusolver"}, keywords: "sudoku,solver,games,interactive"}, 
   {name: "HTML Editor", url: "https://picturelements.github.io/editor", icon: {url:"htmleditor"}, keywords: "html,editor,css,interactive,gadget"},
-  {name: "Bézier", url: "https://picturelements.github.io/bezier", icon: {url:"bezier"}, keywords: "bezier,bézier,interactive,gadget"},
   {name: "Phone Snake", url: "https://picturelements.github.io/phonesnake", icon: {url:"phonesnake"}, keywords: "phone,snake,game,interactive"},
   {name: "404.html", url: "https://picturelements.github.io/404", icon: {url:"404"}, keywords: "404,terminal,console,greentext"},
   {name: "Sweeper", url:"https://picturelements.github.io/games/minesweeper/", icon: {url:"minesweeper"}, keywords: "mine,sweeper,game,interactive"},
