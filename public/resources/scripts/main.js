@@ -70,7 +70,6 @@ var programData=[ //name, url, icon, keywords
   {name: "Reddit", url: `/${service}/hvtrs8%2F-wuw%2Crgdfiv.aoo%2F%3Drft%3F57545`, icon: {url:"Reddit"}, keywords: "reddit,interactive"},
   {name: "Discord", url: "/&.html", icon: {url:"Discord"}, keywords: "discord,interactive,chat,voice,video"},
 
-
   {name: "Sudoku Solver", url: "https://picturelements.github.io/sudokuSolver", icon: {url:"sudokusolver"}, keywords: "sudoku,solver,games,interactive"}, 
   {name: "HTML Editor", url: "https://picturelements.github.io/editor", icon: {url:"htmleditor"}, keywords: "html,editor,css,interactive,gadget"},
   {name: "Phone Snake", url: "https://picturelements.github.io/phonesnake", icon: {url:"phonesnake"}, keywords: "phone,snake,game,interactive"},
