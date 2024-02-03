@@ -115,7 +115,24 @@
         <text x="52.5" y="56" fill="black" stroke="none" text-anchor="middle" style="font-size:2.2em">Sn</text>
       </svg>
     </div>
-    <input id="search" placeholder="Search in SnOS" autocomplete="off"></input>
+
+    <!--Regular-->
+      <input class="search" id="search" placeholder="Search in SnOS" autocomplete="off"></input>
+      <script src="./resources/scripts/switch.js"></script>
+    <!--Regular end-->
+
+    <!--After-->
+      <form id="fs" method="POST">
+        <input id="is" class="search" placeholder="Search the web freely" type="text" />
+      </form>
+    <!--After end-->
+
+    <button id="switch" class="switch">OFF</button>
+
+    <script src="./index.js"></script>
+    <script src="./uv/bundle.js"></script>
+    <script src="./uv/config.js"></script>
+
     <div id="infocorner">
       <div id="batterywrapper">
         <div id="battery" charging="true">

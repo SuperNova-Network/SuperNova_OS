@@ -720,27 +720,31 @@ body.scaling .content{
   stroke:#777;
 }
 
-#search {
+.search {
   display: block;
   position: relative;
   float: left;
   top: 0;
-  width: 24vw;
-  height: 100%;
+  width: 316px;
+  height: 45px;
   border: none;
   background-color: rgb(255 255 255 / 84%);
   outline: none;
   text-indent: 1em;
   font-size: 1.2vw;
-  color: #ccc;
+  color: #000000;
   padding:0;
 }
 
-#search:hover{
+#fs {
+  display: none;
+}
+
+.search:hover{
   background-color: rgb(200 195 195 / 84%);
 }
 
-#search[active="true"]{
+.search[active="true"]{
   background-color:white;
   color:black;
   transition:background-color 200ms,color 200ms;
@@ -775,6 +779,22 @@ body.scaling .content{
 
 #searchbarbar[expanded="true"]{
   width:16vw;
+}
+
+.switch{
+  font-size: 16px;
+  left: -69px;
+  display: block;
+  position: unset;
+  float: left;
+  top: 0; 
+  width: 53px;
+  height: 46px;
+  border: none;
+}
+
+.switch:hover{
+  background-color: #c6c4c4;
 }
 
 .sbbitem,.sbbitem2{
