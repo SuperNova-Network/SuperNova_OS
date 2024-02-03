@@ -63,23 +63,28 @@ document.body.classList.add(localStorage.getItem("viewmode") || "grid");
 
 var programData=[
   {name: "SuperNova", url: "/$.html", icon: {url:"SuperNova"}, keywords: "proxy,unblocker,supernova,$,calculator,math,interactive,canvas,graph"},
-  {name: "Sudoku Solver", url: "https://picturelements.github.io/sudokuSolver", icon: {url:"sudokusolver"}, keywords: "sudoku,solver,games,interactive"},
-  {name: "HTML Editor", url: "https://picturelements.github.io/editor", icon: {url:"htmleditor"}, keywords: "html,editor,css,interactive,gadget"},
-  //{name: "Egg Hunt", url: "https://picturelements.github.io/egghunt", icon: {url:"egghunt"}, keywords: "egg,hunt,confused,travolta,game,reddit,easter"},
-  {name: "Phone Snake", url: "https://picturelements.github.io/phonesnake", icon: {url:"phonesnake"}, keywords: "phone,snake,game,interactive"},
-  //{name: "Back Dropper", url: "https://picturelements.github.io/backdropper", icon: {url:"backdropper"}, keywords: "back,dropper,library,background,canvas"},
   {name: "EaglerCraft", url: "http://localhost:8080/supernova/hvtrs8%2F-sf5%3B2e.eivhwb%2Cim%2Fxj486of4nfe%2F", icon: {url:"parrots"}, keywords: "minecraft,building,eaglercraft,game,interactive"},
-  //{name: "Smoke", url: "https://picturelements.github.io/smoke", icon: {url:"smoke"}, keywords: "smoke,3d,canvas,math"},
+
+  {name: "Sudoku Solver", url: "https://picturelements.github.io/sudokuSolver", icon: {url:"sudokusolver"}, keywords: "sudoku,solver,games,interactive"},
+  {name: "Mandelbrot", url: "https://picturelements.github.io/mandelbrot", icon: {url:"mandelbrot"}, keywords: "mandelbrot,julia,set,generator,fractal,interactive,math,canvas"},
+  {name: "Pitchfork Emporium", url: "https://pitchforkemporium.github.io/", icon: {url:"pitchforkemporium"}, keywords: "pitchfork,emporium,store,webshop,reddit,api"},
+  {name: "Boids", url: "https://aquaplexus.net/fishSim", icon: {url:"boids"}, keywords: "boids,craig,reynolds,interactive,fish,simulation"},
+  {name: "HTML Editor", url: "https://picturelements.github.io/editor", icon: {url:"htmleditor"}, keywords: "html,editor,css,interactive,gadget"},
+  {name: "Bézier", url: "https://picturelements.github.io/bezier", icon: {url:"bezier"}, keywords: "bezier,bézier,interactive,gadget"},
+  {name: "Is it Prime?", url: "https://picturelements.github.io/isitprime", icon: {url:"isitprime"}, keywords: "prime,generator,math,information"},
+  {name: "Phone Snake", url: "https://picturelements.github.io/phonesnake", icon: {url:"phonesnake"}, keywords: "phone,snake,game,interactive"},
   {name: "404.html", url: "https://picturelements.github.io/404", icon: {url:"404"}, keywords: "404,terminal,console,greentext"},
   {name: "Sweeper", url:"https://picturelements.github.io/games/minesweeper/", icon: {url:"minesweeper"}, keywords: "mine,sweeper,game,interactive"},
   {name: "Dodge", url: "https://picturelements.github.io/games/dodge", icon: {url:"dodge"}, keywords: "game,reddit,cursor,slide"},
   {name: "about.txt", url: "https://picturelements.github.io/PeNote2?url=https://picturelements.github.io/textfiles/about.txt", icon: {file:"txt"}, keywords: "about,meta,info,text,document,txt,SnOS"},
+
   {name: "Viewer", url: "", icon: {url:"viewer"}, keywords: ""},
   {name: "Console", url: "", icon: {url:"console"}, keywords: ""},
   {name: "Prompt", url: "", icon: {svg:"info_icon"}, keywords: ""},
   {name: "Settings", url: "", icon: {svg:"cog_icon"}, keywords: ""},
   {name: "File Explorer", url: "", icon: {url:"explorer"}, keywords: ""}
 ];
+
 pl=programData.length;
 var viewerID=pl-5,consoleID=pl-4,errID=pl-3,setID=pl-2,explorerID=pl-1;
 var defaultPage="https://api.github.com/repos/SuperNova-Network/SuperNova-DY/contents"; // go to https://api.github.com/users/SuperNova-Network/repos and find "contents_url" to get the url for the default page. EX: https://media.discordapp.net/attachments/828071279424307221/1203153358597394534/image.png?ex=65d00ee2&is=65bd99e2&hm=9a4f32904842838ea9a40c8f45e2b860491aee8c4b55cb6fa4b7f995f5f64aff&=&format=webp&quality=lossless&width=1439&height=206
@@ -161,13 +166,9 @@ function setup(){
   }
   addTaskbarIcon(explorerID,"null",0,programData[explorerID].name,programData[explorerID].icon,true);
   addTaskbarIcon(consoleID,"null",0,programData[consoleID].name,programData[consoleID].icon,true);
-
-  /*
   for (var i=0;i<taskArr.length;i++){
     addTaskbarIcon(taskArr[i],"null",0,programData[taskArr[i]].name,programData[taskArr[i]].icon,true);
   }
-*/
-
   for (var i=-14;i<15;i++){
     var el=document.createElement("option");
     el.innerHTML="UTC"+(i<1?"":"+")+""+(i!=0?i:"");
