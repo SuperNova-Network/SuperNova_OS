@@ -1,8 +1,5 @@
 /* TODO:
-*  Wifi bar, battery perc icons
-*  Add "reset time" option
 *  Add power menu
-*  Fix index=-1 bug on icon select
 *  Sort programs in programbar
 *  Make anything work in IE
 */
@@ -61,17 +58,17 @@ lockTaskbar=localStorage.getItem("lockTaskbar")!="0";
 document.getElementById("taskbar").className=lockTaskbar?"locked":"unlocked";
 document.body.classList.add(localStorage.getItem("viewmode") || "grid");
 
-var programData=[
+var programData=[ //name, url, icon, keywords
   {name: "SuperNova", url: "/$.html", icon: {url:"SuperNova"}, keywords: "proxy,unblocker,supernova,$,calculator,math,interactive,canvas,graph"},
-  {name: "EaglerCraft", url: "http://localhost:8080/supernova/hvtrs8%2F-sf5%3B2e.eivhwb%2Cim%2Fxj486of4nfe%2F", icon: {url:"parrots"}, keywords: "minecraft,building,eaglercraft,game,interactive"},
+  {name: "Minecraft", url: "http://localhost:8080/supernova/hvtrs8%2F-sf5%3B2e.eivhwb%2Cim%2Fxj486of4nfe%2F", icon: {url:"Minecraft"}, keywords: "minecraft,building,eaglercraft,game,interactive"},
+  {name: "YouTube", url: "http://localhost:8080/supernova/hvtrs8%2F-wuw%2Cymuvu%60e%2Ccmm-", icon: {url:"Youtube"}, keywords: "prime,generator,math,information"},
 
-  {name: "Sudoku Solver", url: "https://picturelements.github.io/sudokuSolver", icon: {url:"sudokusolver"}, keywords: "sudoku,solver,games,interactive"},
-  {name: "Mandelbrot", url: "https://picturelements.github.io/mandelbrot", icon: {url:"mandelbrot"}, keywords: "mandelbrot,julia,set,generator,fractal,interactive,math,canvas"},
   {name: "Pitchfork Emporium", url: "https://pitchforkemporium.github.io/", icon: {url:"pitchforkemporium"}, keywords: "pitchfork,emporium,store,webshop,reddit,api"},
+  {name: "Boids", url: "https://aquaplexus.net/fishSim", icon: {url:"boids"}, keywords: "boids,craig,reynolds,interactive,fish,simulation"},
+  {name: "Sudoku Solver", url: "https://picturelements.github.io/sudokuSolver", icon: {url:"sudokusolver"}, keywords: "sudoku,solver,games,interactive"},  {name: "Pitchfork Emporium", url: "https://pitchforkemporium.github.io/", icon: {url:"pitchforkemporium"}, keywords: "pitchfork,emporium,store,webshop,reddit,api"},
   {name: "Boids", url: "https://aquaplexus.net/fishSim", icon: {url:"boids"}, keywords: "boids,craig,reynolds,interactive,fish,simulation"},
   {name: "HTML Editor", url: "https://picturelements.github.io/editor", icon: {url:"htmleditor"}, keywords: "html,editor,css,interactive,gadget"},
   {name: "Bézier", url: "https://picturelements.github.io/bezier", icon: {url:"bezier"}, keywords: "bezier,bézier,interactive,gadget"},
-  {name: "Is it Prime?", url: "https://picturelements.github.io/isitprime", icon: {url:"isitprime"}, keywords: "prime,generator,math,information"},
   {name: "Phone Snake", url: "https://picturelements.github.io/phonesnake", icon: {url:"phonesnake"}, keywords: "phone,snake,game,interactive"},
   {name: "404.html", url: "https://picturelements.github.io/404", icon: {url:"404"}, keywords: "404,terminal,console,greentext"},
   {name: "Sweeper", url:"https://picturelements.github.io/games/minesweeper/", icon: {url:"minesweeper"}, keywords: "mine,sweeper,game,interactive"},
