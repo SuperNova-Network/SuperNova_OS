@@ -60,11 +60,12 @@ document.body.classList.add(localStorage.getItem("viewmode") || "grid");
 
 var programData=[ //name, url, icon, keywords
   {name: "SuperNova", url: "/$.html", icon: {url:"SuperNova"}, keywords: "proxy,unblocker,supernova,$,calculator,math,interactive,canvas,graph"},
-  {name: "Minecraft", url: "http://localhost:8080/supernova/hvtrs8%2F-sf5%3B2e.eivhwb%2Cim%2Fxj486of4nfe%2F", icon: {url:"Minecraft"}, keywords: "minecraft,building,eaglercraft,game,interactive"},
-  {name: "YouTube", url: "http://localhost:8080/supernova/hvtrs8%2F-wuw%2Cymuvu%60e%2Ccmm-", icon: {url:"Youtube"}, keywords: "prime,generator,math,information"},
+  {name: "Minecraft", url: "/supernova/hvtrs8%2F-sf5%3B2e.eivhwb%2Cim%2Fxj486of4nfe%2F", icon: {url:"Minecraft"}, keywords: "minecraft,building,eaglercraft,game,interactive"},
+  {name: "YouTube", url: "/supernova/hvtrs8%2F-wuw%2Cymuvu%60e%2Ccmm-", icon: {url:"Youtube"}, keywords: "prime,generator,math,information"},
+  {name: "TikTok", url: "/supernova/hvtrs8%2F-wuw%2Ctkkvoi.aoo%2F", icon: {url:"TikTok"}, keywords: "tiktok,video,interactive"},
+
 
   {name: "Pitchfork Emporium", url: "https://pitchforkemporium.github.io/", icon: {url:"pitchforkemporium"}, keywords: "pitchfork,emporium,store,webshop,reddit,api"},
-  {name: "Boids", url: "https://aquaplexus.net/fishSim", icon: {url:"boids"}, keywords: "boids,craig,reynolds,interactive,fish,simulation"},
   {name: "Sudoku Solver", url: "https://picturelements.github.io/sudokuSolver", icon: {url:"sudokusolver"}, keywords: "sudoku,solver,games,interactive"},  {name: "Pitchfork Emporium", url: "https://pitchforkemporium.github.io/", icon: {url:"pitchforkemporium"}, keywords: "pitchfork,emporium,store,webshop,reddit,api"},
   {name: "Boids", url: "https://aquaplexus.net/fishSim", icon: {url:"boids"}, keywords: "boids,craig,reynolds,interactive,fish,simulation"},
   {name: "HTML Editor", url: "https://picturelements.github.io/editor", icon: {url:"htmleditor"}, keywords: "html,editor,css,interactive,gadget"},

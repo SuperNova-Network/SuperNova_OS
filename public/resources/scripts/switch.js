@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
             document.getElementById('fs').style.display = 'none';
 
             button.classList.remove('enabled');
-            button.style.backgroundColor = '#fff';
+            button.style.backgroundColor = 'rgb(255 255 255 / 84%)';
             button.innerHTML = 'OFF';
         } else if (enabled === false) {
             enabled = true;
