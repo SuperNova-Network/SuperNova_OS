@@ -13,7 +13,7 @@ const bare = createBareServer("/bare/");
 const app = express();
 
 app.use(basicAuth({ // add the basicAuth middleware
-    users: { 'admin': 'password' }, // replace 'admin' and 'password' with your desired username and password
+    users: { 'admin': '$devteam' }, // replace 'admin' and 'password' with your desired username and password
     challenge: true,
     realm: 'My Application',
 }));
