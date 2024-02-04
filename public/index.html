@@ -16,7 +16,7 @@
     <source src="https://picturelements.github.io/images/win_icons/LockIt.mp3">
   </audio>
 
- <!-- <p id="version_text">VERSION:</p> -->
+  <!-- <p id="version_text">VERSION:</p> -->
 
   <button id="gofull" style="display:none; position:fixed; z-index:100;">GO FULLSCREEN</button>
   <div id="desktopwrapper" class="grad backOverride">
@@ -120,14 +120,14 @@
     </div>
 
     <!--Regular-->
-      <input class="search" id="search" placeholder="Search in SnOS" autocomplete="off"></input>
-      <script src="./resources/scripts/switch.js"></script>
+    <input class="search" id="search" placeholder="Search in SnOS" autocomplete="off"></input>
+    <script src="./resources/scripts/switch.js"></script>
     <!--Regular end-->
 
     <!--After-->
-      <form id="fs" method="POST">
-        <input id="is" class="search" placeholder="Search the web freely" type="text" />
-      </form>
+    <form id="fs" method="POST">
+      <input id="is" class="search" placeholder="Search the web freely" type="text" />
+    </form>
     <!--After end-->
 
     <button id="switch" class="switch">OFF</button>
@@ -179,7 +179,8 @@
       <p>Reset all filenames to their defaults. This action will take effect immediately and cannot be undone.</p>
       <button onclick="resetNamesRelay()">Reset to default</button>
       <h>System data</h>
-      <p>Factory reset system data. All saved data will be deleted and the system will restart. This action cannot be undone.
+      <p>Factory reset system data. All saved data will be deleted and the system will restart. This action cannot be
+        undone.
       </p>
       <button onclick="factoryReset()">Factory reset</button>
       <h>Windows</h>
@@ -197,26 +198,41 @@
       <button onclick="changeBackground()">Apply Background</button>
 
       <script>
-        // Function to change the background
+        // Function to change the background-image of the desktop.
         function changeBackground() {
           const customBackgroundInput = document.getElementById("customBackgroundInput");
-          const desktopwrapper = document.getElementById("desktopwrapper");
-          desktopwrapper.style.backgroundImage = "url('" + customBackgroundInput.value + "')";
+          const css = ".backOverride { background-image: url('" + customBackgroundInput.value + "'); }";
+          document.getElementById("specCols").innerHTML += css;
+
+          // Save the background URL to localStorage
+          localStorage.setItem('backgroundUrl', customBackgroundInput.value);
         }
+
+        // Code to apply the saved background URL when the page loads
+        window.onload = function () {
+          setTimeout(function () {
+            const savedBackgroundUrl = localStorage.getItem('backgroundUrl');
+            if (savedBackgroundUrl) {
+              const css = ".backOverride { background-image: url('" + savedBackgroundUrl + "'); }";
+              document.getElementById("specCols").innerHTML += css;
+              document.getElementById("customBackgroundInput").value = savedBackgroundUrl;
+            }
+          }, 2000); // Wait for 2 seconds
+        };
       </script>
 
       <!--Make a color rgb picker that changes the background-color for id "desktopwrapper"-->
-     
+
       <input type="color" id="colorPicker" value="#ffffff">
       <button onclick="changeColor()" id="submitColor">Submit</button>
-      
+
       <script>
         function changeColor() {
           const colorPicker = document.getElementById('colorPicker');
           const desktopWrapper = document.getElementById('desktopwrapper');
           const submitButton = document.getElementById('submitColor');
-      
-          submitButton.addEventListener('click', function() {
+
+          submitButton.addEventListener('click', function () {
             desktopWrapper.style.backgroundColor = colorPicker.value;
             desktopWrapper.style.backgroundImage = "none";
           });
