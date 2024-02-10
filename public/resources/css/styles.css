@@ -773,8 +773,8 @@ body.scaling .content {
   position: relative;
   float: left;
   top: 0;
-  width: 316px;
-  height: 45px;
+  width: 21vw;
+  height: 3vw;
   border: none;
   background-color: rgb(255 255 255 / 84%);
   outline: none;
@@ -839,8 +839,8 @@ body.scaling .content {
   position: unset;
   float: left;
   top: 0;
-  width: 53px;
-  height: 46px;
+  width: 3vw;
+  height: 3vw;
   font-size: 0.85vw;
   background-color: rgb(255 255 255 / 84%);
 }
