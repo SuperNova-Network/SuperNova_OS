@@ -1504,13 +1504,42 @@ function openPrompt(title, msg, action) {
   next = action;
 }
 
+function showNotification(title, body) {
+  // Check if the browser supports notifications
+  if (!("Notification" in window)) {
+      console.log("This browser does not support desktop notification");
+  }
+
+  // Check whether notification permissions have already been granted
+  else if (Notification.permission === "granted") {
+      // If it's okay let's create a notification
+      var notification = new Notification(title, { body: body });
+  }
+
+  // Otherwise, we need to ask the user for permission
+  else if (Notification.permission !== "denied") {
+      Notification.requestPermission().then(function (permission) {
+          // If the user accepts, let's create a notification
+          if (permission === "granted") {
+              var notification = new Notification(title, { body: body });
+          }
+      });
+  }
+}
+
+//showNotification('Hello', 'This is a test notification');
+
 function execNext(id) {
   if (next == "reset") {
     localStorage.clear();
     restart();
   } else if (next == "resetn") {
     resetNames();
+  } else if (next == "welcome") {
+    localStorage.setItem("welcome-popup", "false");
+    closeWin(id);
   }
+
   cancelPrompt(id);
 }
 
@@ -1525,6 +1554,35 @@ function resetNamesRelay() {
 
 function resetAll() {
   openPrompt("Reset System?", "Do you want to reset the system?", "reset");
+}
+
+
+// Check the value of the local storage item
+if (!localStorage.getItem("welcome-popup")) {
+  localStorage.setItem("welcome-popup", "true"); // or any default value you want
+  openPrompt("Welcome to SnOS!", "This is a simple operating system made by SuperNova-Network. It's a work in progress, so expect bugs and unfinished features. Enjoy your stay!", "welcome");
+}
+
+if (localStorage.getItem("welcome-popup") === "true") {
+ // Get the element with id "0"
+var element = document.getElementById("0");
+
+// Check if the element exists
+if (element) {
+  // Find the element with class "promptbtn cancel" within it
+  var promptBtnCancel = element.querySelector(".promptbtn.cancel");
+
+  // Check if the promptBtnCancel exists
+  if (promptBtnCancel) {
+    // Trigger the onclick event of the button
+    promptBtnCancel.click();
+  } else {
+    console.log("Element with class 'promptbtn cancel' not found.");
+  }
+} else {
+  console.log("Element with id '0' not found.");
+}
+  openPrompt("Welcome to SnOS!", "This is a simple operating system made by SuperNova-Network. It's a work in progress, so expect bugs and unfinished features. Enjoy your stay!", "welcome");
 }
 
 function toggleFullscreen() {
