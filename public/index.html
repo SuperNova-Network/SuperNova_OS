@@ -8,7 +8,7 @@
   <script src="https://picturelements.github.io/PeOS/console.js"></script>
   <link href="https://picturelements.github.io/PeOS/console.css" rel="stylesheet" type="text/css">
   <link rel="stylesheet" href="./resources/css/styles.css">
-  <link rel="icon" type="image/png" id="favicon">
+  <link rel="icon" href="" type="image/png" id="favicon">
 </head>
 
 <body oncontextmenu="return contextShow">
@@ -183,6 +183,7 @@
         undone.
       </p>
       <button onclick="factoryReset()">Factory reset</button>
+
       <h>Windows</h>
       <p>Set the default size of opened window. Default is 60x35.<br><br><span id="winW">Window width: 40</span></p>
       <input class="sizeslider" type="range" min="20" max="100" value="40" oninput="updateSize(0)"></input>
@@ -313,9 +314,48 @@
         }
       </script>
 
+
+
+      <h>Panic key / Shortcuts</h>
+      <p>Set a key combination to quickly hide all windows and open a new window with a predefined URL. This action
+        cannot be undone.</p>
+      <input id="panickey" placeholder="Key combination" oninput="setPanicKey()"></input>
+      <input id="panicurl" placeholder="URL" oninput="setPanicURL()"></input>
+      <button onclick="setPanic()">Set panic key</button>
+
+      <script>
+        function setPanicKey() {
+          const panicKey = document.getElementById('panickey').value;
+          localStorage.setItem('panicKey', panicKey);
+        }
+
+        function setPanicURL() {
+          let panicURL = document.getElementById('panicurl').value;
+          if (!panicURL.startsWith('http://') && !panicURL.startsWith('https://')) {
+            panicURL = 'http://' + panicURL;
+          }
+          localStorage.setItem('panicURL', panicURL);
+        }
+
+        function setPanic() {
+          setPanicKey();
+          setPanicURL();
+        }
+
+        document.addEventListener('keydown', function (event) {
+          const key = event.key;
+          const panicKey = localStorage.getItem('panicKey');
+          if (key === panicKey) {
+            const panicURL = localStorage.getItem('panicURL');
+            window.location.href = panicURL;
+          }
+        });
+      </script>
+
       <br>
       <br>
       <br>
+
 
     </div>
   </div>
