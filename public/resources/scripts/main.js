@@ -1495,7 +1495,9 @@ window.onload = function () {
 },10);*/
 
 function openPrompt(title, msg, action) {
+  var audio = new Audio('/resources/media/sounds/Xp_Error.wav');
   var buttons = "<br><button class='promptbtn exec'>OK</button><button class='promptbtn cancel'>Cancel</button>";
+  audio.play();
   openPopup(title, msg + buttons);
   var elem = document.getElementById("desktop").lastChild;
   elem.getElementsByClassName("close")[0].setAttribute("onclick", "cancelPrompt(" + elem.id + ")");
@@ -1556,33 +1558,15 @@ function resetAll() {
   openPrompt("Reset System?", "Do you want to reset the system?", "reset");
 }
 
+// Check if the user has visited before
+if (!localStorage.getItem("visited-before")) {
+  // This is the user's first visit
+  setTimeout(function() {
+    openPrompt("Welcome to SnOS!", "This is a simple operating system made by SuperNova-Network. It's a work in progress, so expect bugs and unfinished features. Enjoy your stay!", "welcome");
+  }, 3000);
 
-// Check the value of the local storage item
-if (!localStorage.getItem("welcome-popup")) {
-  localStorage.setItem("welcome-popup", "true"); // or any default value you want
-  openPrompt("Welcome to SnOS!", "This is a simple operating system made by SuperNova-Network. It's a work in progress, so expect bugs and unfinished features. Enjoy your stay!", "welcome");
-}
-
-if (localStorage.getItem("welcome-popup") === "true") {
- // Get the element with id "0"
-var element = document.getElementById("0");
-
-// Check if the element exists
-if (element) {
-  // Find the element with class "promptbtn cancel" within it
-  var promptBtnCancel = element.querySelector(".promptbtn.cancel");
-
-  // Check if the promptBtnCancel exists
-  if (promptBtnCancel) {
-    // Trigger the onclick event of the button
-    promptBtnCancel.click();
-  } else {
-    console.log("Element with class 'promptbtn cancel' not found.");
-  }
-} else {
-  console.log("Element with id '0' not found.");
-}
-  openPrompt("Welcome to SnOS!", "This is a simple operating system made by SuperNova-Network. It's a work in progress, so expect bugs and unfinished features. Enjoy your stay!", "welcome");
+  // Set the flag indicating the user has visited before
+  localStorage.setItem("visited-before", "true");
 }
 
 function toggleFullscreen() {
