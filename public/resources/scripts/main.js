@@ -1813,6 +1813,8 @@ function relayAddWindow(id, name, elem) {
   addWindow(id, name, url, DEF_WIN_W, DEF_WIN_H, getType(getExtension(url))[0])
 }
 
+// example: addWindow(viewerID, null, "https://taco.com", DEF_WIN_W, DEF_WIN_H);
+
 function loadFilesRelay(elem) {
   loadFiles(elem.getAttribute("url"), elem);
 }
