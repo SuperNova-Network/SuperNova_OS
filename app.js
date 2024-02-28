@@ -14,7 +14,7 @@ const app = express();
 
 app.use(basicAuth({ // add the basicAuth middleware
     users: { 'admin': '$devteam' }, // replace 'admin' and 'password' with your desired username and password
-    challenge: true,
+    challenge: false,
     realm: 'My Application',
 }));
 
