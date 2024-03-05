@@ -22,11 +22,18 @@ function processUrl(value, path) {
 
     sessionStorage.setItem('encodedUrl', __uv$config.encodeUrl(url))
 
+    const restrictedWebsites = ["Pornhub.com", "8Tube.xxx", "Redtube.com", "Kink.com", "YouJizz.com", "Xvideos.com", "YouPorn.com", "Brazzers.com", "fuck.com"];
+
     if (path) {
       location.href = path
     } else {
-      window.location.href = __uv$config.prefix + __uv$config.encodeUrl(url)
+      if (restrictedWebsites.includes(url)) { // if the url the user typed in is any of the urls in "restrictedWebsites" then,
+        document.write("This query is restricted by SuperNova. Please try another query.") // then--> display this message.
+      } else {  // if not,
+        window.location.href = __uv$config.prefix + __uv$config.encodeUrl(url) // if not--> continue encoding the url the user typed in.
+      }
     }
+    
   })
 }
 
