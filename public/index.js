@@ -14,15 +14,8 @@ function registerServiceWorker() {
   })
 }
 
-function processUrl(value, path) {
-  registerServiceWorker().then(() => {
-    let url = value.trim()
-    if (!isUrl(url)) url = 'https://www.google.com/search?q=' + url
-    else if (!(url.startsWith('https://') || url.startsWith('http://'))) url = 'https://' + url
-
-    sessionStorage.setItem('encodedUrl', __uv$config.encodeUrl(url))
-
-    const restrictedWebsites = ["Pornhub.com", "8Tube.xxx", "Redtube.com", "Kink.com", "YouJizz.com", "Xvideos.com", "YouPorn.com", "Brazzers.com", "fuck.com"];
+/*
+# Old restriction code:
 
     if (path) {
       location.href = path
@@ -33,9 +26,39 @@ function processUrl(value, path) {
         window.location.href = __uv$config.prefix + __uv$config.encodeUrl(url) // if not--> continue encoding the url the user typed in.
       }
     }
+  });
+*/
+
+function processUrl(value, path) {
+  registerServiceWorker().then(() => {
+    let url = value.trim();
+    if (!isUrl(url)) url = 'https://www.google.com/search?q=' + url;
+    else if (!(url.startsWith('https://') || url.startsWith('http://'))) url = 'https://' + url;
+
+    sessionStorage.setItem('encodedUrl', __uv$config.encodeUrl(url));
+
+    const restrictedWebsites = ["Pornhub.com", "8Tube.xxx", "Redtube.com", "Kink.com", "YouJizz.com", "Xvideos.com", "YouPorn.com", "Brazzers.com", "fuck.com"];
     
-  })
+    let isRestricted = false;
+    for (let i = 0; i < restrictedWebsites.length; i++) {
+      if (url.includes(restrictedWebsites[i])) {
+        isRestricted = true;
+        break;
+      }
+    }
+
+    if (isRestricted) {
+      document.write("This query is restricted by SuperNova. Please try another query.");
+    } else {
+      if (path) {
+        location.href = path;
+      } else {
+        window.location.href = __uv$config.prefix + __uv$config.encodeUrl(url);
+      }
+    }
+  });
 }
+
 
 function go(value) {
   processUrl(value, false) /* Change to : processUrl(value, '/iframe.html') if you want a url variable.*/
