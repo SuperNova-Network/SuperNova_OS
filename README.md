@@ -1,68 +1,63 @@
-<div align="center">
+# SuperNova OS (SnOS)
 
-<img width="260px" src="https://cdn.discordapp.com/attachments/1121942874871824518/1121943072876536000/image.png">
+Welcome to SuperNova OS (SnOS) - the revolutionary Node.js website proxy designed to resemble a fully functional operating system experience right in your browser. With SnOS, you can enjoy a unique browsing experience, complete with customizable wallpapers, interactive programs, and a plethora of features to explore.
 
-# SuperNova
+## Overview
 
-SuperNova is a very fast proxy using **dynamic** If you would like to deploy and make links for your friends, SuperNova has user friendly step by step process on how to install, and **deploy for free**, and paid services!.
+SuperNova OS (SnOS) reimagines the traditional browsing experience by transforming it into an immersive operating system-like environment. Built on Node.js, SnOS offers a seamless integration of web technologies to deliver a user-friendly and feature-rich platform.
 
-</br>
+## Key Features
 
+- **Program Launcher**: Access a variety of interactive programs seamlessly integrated into SnOS, from games to productivity tools, all within your browser window.
 
-[![License: AGPL v3](https://img.shields.io/badge/License-AGPL%20v3-blue.svg)](https://www.gnu.org/licenses/agpl-3.0)
-[![Framework](https://img.shields.io/badge/Framework-Node-green.svg)](https://www.example.com/)
-[![GitHub last commit](https://img.shields.io/github/last-commit/SuperNova-Network/SuperNova-DY.svg)](https://github.com/SuperNova-Network/SuperNova-DY/commits/master)
-[![GitHub issues](https://img.shields.io/github/issues-raw/SuperNova-Network/SuperNova-DY.svg)](https://github.com/SuperNova-Network/SuperNova-DY/issues)
-[![GitHub stars](https://img.shields.io/github/stars/SuperNova-Network/SuperNova-DY.svg)](https://github.com/SuperNova-Network/SuperNova-DY/stargazers)
+- **HTTP Proxy**: Utilize SnOS's built-in HTTP proxy feature to navigate the web securely and anonymously, ensuring your privacy and security while browsing.
 
+- **Customizable Wallpaper**: Personalize your SnOS experience by changing the wallpaper to suit your mood or preferences, with a selection of stunning wallpapers to choose from.
 
+- **Settings Program**: Tailor your SnOS experience with the settings Program, where you can adjust various preferences and configurations to enhance your browsing experience.
 
-[Features](#features) • 
-[Deployment](#deployment) • 
-[Contributing](#contributing)
+- **Responsive Design**: SnOS is designed to be responsive and accessible across various devices, ensuring a consistent and seamless experience whether you're on desktop, or tablet.
 
+- **Cloaking**: Of course like any other proxy- we had to add in some helpful cloaks for secretive use. You can access cloaks from the settings program.
 
+## Getting Started
 
-![SuperNova](https://media.discordapp.net/attachments/1123937882168623135/1126338198847627384/image.png?width=1440&height=627)
+To get started with SuperNova OS (SnOS), follow these simple steps:
 
-</div>
+1. **Clone Repository**: Clone the SnOS repository to your local machine using the following command:
 
-## Features
+2. **Install Dependencies**: Navigate to the cloned directory and install the required dependencies by running:
 
-- Apps
-- Games
-- Proxy
-- Cloaks
-- Cheats
+3. **Start Server**: Once the dependencies are installed, start the SnOS server by running:
 
-### Shortcuts
+4. **Enjoy**: Open your web browser and navigate to `http://localhost:3000` to start exploring SuperNova OS (SnOS)!
 
-SuperNova comes with shortcuts to quickly hide your 'work' by replacing it with a math, english, or science website that are convincing!
+## Usage
 
-- `Alt + M` - Quickly open a random math cloak in our proxy
-- `Alt + S` - Opens a science cloak in our proxy
-- `Alt + E` - Opens an English cloak in our proxy
+- **Launching Programs**: Click on the program icons on the SnOS desktop to launch the corresponding applications.
 
-- PS- There's like 100+ links for those shortcuts.
+- **HTTP Proxy**: Use the built-in HTTP proxy feature to browse the web securely and anonymously. Simply click the on and off button on the right hand side of the search bar programs, and switch it on. Next enter the desired URL in the address bar and enjoy!
 
-## Deployment
+- **Changing Wallpaper**: Right-click on the desktop to access the context menu, then select "Change Wallpaper" to choose from a selection of stunning wallpapers.
 
-### Quick Deployment Options
+- **Settings**: Access the settings window by clicking on the gear icon from afterwards clicking the "SnOS" square box logo on the taskbar.
 
-SuperNova will not be the one to put a blame if you deploy our project to replit, glitch, etc ; and get your account deleted.
+## License and Terms of Service
 
-### Normal Deployment (Recommended)
-
-- [NodeJS version >=18](https://nodejs.org/)
-
-```bash
-git clone https://github.com/SuperNova-Network/SuperNova-DY.git
-cd SuperNova-DY
-npm install
-npm start
-
-```
+For licensing information and terms of service, we advise you to check out the respective tabs on the SuperNova OS (SnOS) website.
 
 ## Contributing
 
-SuperNova is still fairly new to this universe, and we would love to have your support to grow our small but growing community!
+We welcome contributions from the community to help improve and enhance SuperNova OS (SnOS). Whether you're a developer, designer, or enthusiast, there are many ways to get involved:
+
+- **Bug Reports**: Report any bugs or issues you encounter while using SnOS to help us improve stability and performance.
+
+- **Feature Requests**: Share your ideas for new features or improvements that you'd like to see implemented in SnOS.
+
+- **Code Contributions**: Contribute code to SnOS's GitHub repository to help implement new features, fix bugs, or optimize performance.
+
+## Contact
+
+If you have any questions, suggestions, or feedback regarding SuperNova OS (SnOS), please don't hesitate to contact us at  our discord server [dsc.gg/supernovaproxy](dsc.gg/supernovaproxy)
+
+Thank you for choosing SuperNova OS (SnOS). We hope you enjoy your browsing experience in this innovative web-based environment!
