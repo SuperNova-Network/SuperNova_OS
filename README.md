@@ -1,8 +1,14 @@
+<div align="center">
+
 <img width="260px" src="https://raw.githubusercontent.com/SuperNova-Network/SuperNova_OS/main/public/resources/media/images/image1.webp?token=GHSAT0AAAAAACTJUPT4OTKYFLHJBKKKNX6QZTCAQ3A">
 
 # SuperNova OS (SnOS)
 
 <img width="4060px" src="https://github.com/SuperNova-Network/SuperNova_OS/blob/main/public/resources/media/images/Image2.png?raw=true">
+
+</div>
+
+<br/>
 
 Welcome to SuperNova OS (SnOS) - the revolutionary Node.js website proxy designed to resemble a fully functional operating system experience right in your browser. With SnOS, you can enjoy a unique browsing experience, complete with customizable wallpapers, interactive programs, and a plethora of features to explore.
 
