@@ -34,11 +34,11 @@ SuperNova OS (SnOS) reimagines the traditional browsing experience by transformi
 
 To get started with SuperNova OS (SnOS), follow these simple steps:
 
-1. **Clone Repository**: Clone the SnOS repository to your local machine using the following command:
+1. **Clone Repository**: Clone the SnOS repository to your local machine using the following command: `git clone https://github.com/SuperNova-Network/SuperNova_OS.git`
 
-2. **Install Dependencies**: Navigate to the cloned directory and install the required dependencies by running:
+2. **Install Dependencies**: Navigate to the cloned directory and install the required dependencies by running: `npm i`
 
-3. **Start Server**: Once the dependencies are installed, start the SnOS server by running:
+3. **Start Server**: Once the dependencies are installed, start the SnOS server by running: `npm start`
 
 4. **Enjoy**: Open your web browser and navigate to `http://localhost:3000` to start exploring SuperNova OS (SnOS)!
 
