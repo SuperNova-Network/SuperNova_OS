@@ -1,6 +1,6 @@
 <div align="center">
 
-<img width="260px" src="https://raw.githubusercontent.com/SuperNova-Network/SuperNova_OS/main/public/resources/media/images/image1.webp?token=GHSAT0AAAAAACTJUPT4VPGL6C7FDXXEQHFUZTCBBWQ">
+<img width="260px" src="https://github.com/SuperNova-Network/SuperNova_OS/blob/main/public/resources/media/images/image1.webp?raw=true">
 
 # SuperNova OS (SnOS)
 
