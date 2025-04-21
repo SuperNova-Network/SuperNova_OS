@@ -7,6 +7,9 @@ import { hostname } from "node:os";
 import { fileURLToPath } from "url";
 import open from 'open';
 import basicAuth from 'express-basic-auth';
+import dotenv from 'dotenv';
+
+dotenv.config();
 
 const publicPath = fileURLToPath(new URL("./public/", import.meta.url));
 const bare = createBareServer("/bare/");
@@ -47,7 +50,10 @@ server.on("upgrade", (req, socket, head) => {
   }
 });
 
-let port = parseInt(process.env.PORT || "3000");
+const port = parseInt(process.env.PORT, 10) || 3000;
+if (isNaN(port)) {
+  throw new Error("Invalid PORT environment variable");
+}
 
 server.on("listening", async () => {
   const address = server.address();
