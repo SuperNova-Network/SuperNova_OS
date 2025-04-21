@@ -16,10 +16,10 @@
   "license": "ISC",
   "dependencies": {
     "@nebula-services/bare-server-node": "^2.0.4",
-    "@titaniumnetwork-dev/ultraviolet": "^2.0.0",
+    "@titaniumnetwork-dev/ultraviolet": "^3.2.10",
     "chalk": "^5.4.1",
     "cors": "^2.8.5",
-    "express": "^4.18.2",
+    "express": "^5.1.0",
     "express-basic-auth": "^1.2.1",
     "node-fetch": "^3.3.2",
     "open": "^10.0.3"
