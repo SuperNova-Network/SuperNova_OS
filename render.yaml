@@ -1,7 +1,5 @@
 services:
-- type: web
-  name: my-app
-  env: node
-  buildCommand: npm install
-  startCommand: npm start
-  plan: free
+  - type: web
+    name: edu
+    env: docker
+    plan: free
