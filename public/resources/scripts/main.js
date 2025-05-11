@@ -73,7 +73,6 @@ var programData = [ //name, url, icon, keywords
   { name: "Sudoku Solver", url: "https://picturelements.github.io/sudokuSolver", icon: { url: "sudokusolver" }, keywords: "sudoku,solver,games,interactive" },
   { name: "HTML Editor", url: "https://picturelements.github.io/editor", icon: { url: "htmleditor" }, keywords: "html,editor,css,interactive,gadget" },
   { name: "Phone Snake", url: "https://picturelements.github.io/phonesnake", icon: { url: "phonesnake" }, keywords: "phone,snake,game,interactive" },
-  { name: "404.html", url: "https://picturelements.github.io/404", icon: { url: "404" }, keywords: "404,terminal,console,greentext" },
   { name: "Sweeper", url: "https://picturelements.github.io/games/minesweeper/", icon: { url: "minesweeper" }, keywords: "mine,sweeper,game,interactive" },
   { name: "Dodge", url: "https://picturelements.github.io/games/dodge", icon: { url: "dodge" }, keywords: "game,reddit,cursor,slide" },
   { name: "about.txt", url: "https://picturelements.github.io/PeNote2?url=https://picturelements.github.io/textfiles/about.txt", icon: { file: "txt" }, keywords: "about,meta,info,text,document,txt,SnOS" },
