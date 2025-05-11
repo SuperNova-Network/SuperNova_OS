@@ -37,7 +37,7 @@ var colors = [
   ["#999", "#aaa", "#ddd", "#e8e8e8 0%,#a0a0a0 50%,#1f1f1f 100%"]
 ];
 var specCols = ["#68c464 0%,#1c5d9e 38%,#50005f 100%"];
-var backgrounds = ["Adventure_Time.gif", "Bouncy.jpg", "rocks.png", "Flower.jpg", "Bucks.jpg", "Leaf.jpg", "LonelyRoad.jpg", "Flowers.jpg", "Mandelbrot.png", "Match.jpg", "bmw.png"];
+var backgrounds = ["Adventure_Time.gif", "Bouncy.jpg", "space.jpg", "Flower.jpg", "Bucks.jpg", "Leaf.jpg", "LonelyRoad.jpg", "Flowers.jpg", "Mandelbrot.png", "Match.jpg", "rocks.png"];
 contextShow = false, next = null;
 
 //load variables from localStorage
@@ -62,7 +62,7 @@ const service = "supernova";
 
 var programData = [ //name, url, icon, keywords
   { name: "SuperNova", url: "/$.html", icon: { url: "SuperNova" }, keywords: "proxy,unblocker,supernova,$,calculator,math,interactive,canvas,graph" },
-  { name: "Minecraft", url: `${__uv$config.prefix}${__uv$config.encodeUrl('https://example.com/minecraft')}`, icon: { url: "Minecraft" }, keywords: "minecraft,building,eaglercraft,game,interactive" },
+  { name: "Minecraft", url: `${__uv$config.prefix}${__uv$config.encodeUrl('https://eaglercraft.com/mc/1.8.8/')}`, icon: { url: "Minecraft" }, keywords: "minecraft,building,eaglercraft,game,interactive" },
   { name: "YouTube", url: `${__uv$config.prefix}${__uv$config.encodeUrl('https://www.youtube.com')}`, icon: { url: "Youtube" }, keywords: "prime,generator,math,information" },
   { name: "TikTok", url: `${__uv$config.prefix}${__uv$config.encodeUrl('https://www.tiktok.com')}`, icon: { url: "TikTok" }, keywords: "tiktok,video,interactive" },
   { name: "Crazy Games", url: `${__uv$config.prefix}${__uv$config.encodeUrl('https://www.crazygames.com')}`, icon: { url: "CrazyGames" }, keywords: "bezier,bézier,interactive,gadget" },
