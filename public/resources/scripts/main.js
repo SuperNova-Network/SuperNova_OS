@@ -49,7 +49,7 @@ var DEF_WIN_W = parseInt(localStorage.getItem("winW")) || 60;
 var DEF_WIN_H = parseInt(localStorage.getItem("winH")) || 35;
 var ou = localStorage.getItem("oftenUsed");
 if (ou != null) { oftenUsed = ou.split(","); }
-var colId = 2, backId = 3; /*This changes the defualt wallpaper.*/
+var colId = 4, backId = 3; /*This changes the defualt wallpaper.*/
 var ci = localStorage.getItem("colId");
 if (ci != null) { colId = parseInt(ci); }
 var bi = localStorage.getItem("backId");
