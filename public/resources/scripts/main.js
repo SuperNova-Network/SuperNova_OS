@@ -62,13 +62,13 @@ const service = "supernova";
 
 var programData = [ //name, url, icon, keywords
   { name: "SuperNova", url: "/$.html", icon: { url: "SuperNova" }, keywords: "proxy,unblocker,supernova,$,calculator,math,interactive,canvas,graph" },
-  { name: "Minecraft", url: `/${service}/hvtrs8%2F-sf5%3B2e.eivhwb%2Cim%2Fxj486of4nfe%2F`, icon: { url: "Minecraft" }, keywords: "minecraft,building,eaglercraft,game,interactive" },
-  { name: "YouTube", url: `/${service}/hvtrs8%2F-wuw%2Cymuvu%60e%2Ccmm-`, icon: { url: "Youtube" }, keywords: "prime,generator,math,information" },
-  { name: "TikTok", url: `/${service}/hvtrs8%2F-wuw%2Ctkkvoi.aoo%2F`, icon: { url: "TikTok" }, keywords: "tiktok,video,interactive" },
-  { name: "Crazy  Games", url: `/${service}/hvtrs8%2F-wuw%2Ccpaxyeaoeq.aoo%2F`, icon: { url: "CrazyGames" }, keywords: "bezier,bézier,interactive,gadget" },
-  { name: "Shell Shockers", url: `/${service}/hvtrs8%2F-wuw%2Ccpaxyeaoeq.aoo%2Feaoe-sjenlqhmciepsko`, icon: { url: "Shell_Shockers_icon" }, keywords: "pitchfork,emporium,store,webshop,reddit,api" },
-  { name: "Reddit", url: `/${service}/hvtrs8%2F-wuw%2Crgdfiv.aoo%2F%3Drft%3F57545`, icon: { url: "Reddit" }, keywords: "reddit,interactive" },
-  { name: "Discord", url: "/&.html", icon: { url: "Discord" }, keywords: "discord,interactive,chat,voice,video" },
+  { name: "Minecraft", url: `${__uv$config.prefix}${__uv$config.encodeUrl('https://example.com/minecraft')}`, icon: { url: "Minecraft" }, keywords: "minecraft,building,eaglercraft,game,interactive" },
+  { name: "YouTube", url: `${__uv$config.prefix}${__uv$config.encodeUrl('https://www.youtube.com')}`, icon: { url: "Youtube" }, keywords: "prime,generator,math,information" },
+  { name: "TikTok", url: `${__uv$config.prefix}${__uv$config.encodeUrl('https://www.tiktok.com')}`, icon: { url: "TikTok" }, keywords: "tiktok,video,interactive" },
+  { name: "Crazy Games", url: `${__uv$config.prefix}${__uv$config.encodeUrl('https://www.crazygames.com')}`, icon: { url: "CrazyGames" }, keywords: "bezier,bézier,interactive,gadget" },
+  { name: "Shell Shockers", url: `${__uv$config.prefix}${__uv$config.encodeUrl('https://shellshock.io')}`, icon: { url: "Shell_Shockers_icon" }, keywords: "pitchfork,emporium,store,webshop,reddit,api" },
+  { name: "Reddit", url: `${__uv$config.prefix}${__uv$config.encodeUrl('https://www.reddit.com')}`, icon: { url: "Reddit" }, keywords: "reddit,interactive" },
+  { name: "Discord", url: `${__uv$config.prefix}${__uv$config.encodeUrl('https://discord.com')}`, icon: { url: "Discord" }, keywords: "discord,interactive,chat,voice,video" },
 
   { name: "Sudoku Solver", url: "https://picturelements.github.io/sudokuSolver", icon: { url: "sudokusolver" }, keywords: "sudoku,solver,games,interactive" },
   { name: "HTML Editor", url: "https://picturelements.github.io/editor", icon: { url: "htmleditor" }, keywords: "html,editor,css,interactive,gadget" },
