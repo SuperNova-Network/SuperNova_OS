@@ -1,7 +1,5 @@
 /* TODO:
-*  Add power menu
-*  Sort programs in programbar
-*  Make anything work in IE
+- Add a way to right click on the desktop and create a new application.
 */
 
 //https://api.github.com/repos/PicturElements/picturelements.github.io/contents
