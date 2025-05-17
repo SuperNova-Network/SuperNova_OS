@@ -4,7 +4,7 @@
 
 # SuperNova OS (SnOS)
 
-<img width="4060px" src="https://github.com/SuperNova-Network/SuperNova_OS/blob/main/public/resources/media/images/Image2.png?raw=true">
+<img width="4060px" src="https://github.com/SuperNova-Network/SuperNova_OS/blob/main/public/resources/media/images/Preview.png?raw=true">
 
 </div>
 
