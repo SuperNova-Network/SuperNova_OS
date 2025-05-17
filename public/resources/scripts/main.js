@@ -138,8 +138,11 @@ function contextSetUrl() {
     return;
   }
 
-  // Encode with proxy
-  programData[id].url = `${__uv$config.prefix}${__uv$config.encodeUrl(url)}`;
+  // Set the URL as a data attribute on the desktop icon
+  var desktopIcons = document.getElementsByClassName("desktoplink");
+  if (desktopIcons[id]) {
+    desktopIcons[id].setAttribute("data-url", `${__uv$config.prefix}${__uv$config.encodeUrl(url)}`);
+  }
   openPopup("URL Set", "URL has been set for this application.");
 }
 document.body.addEventListener("mousedown", function (event) { winSelect = true; xStart = event.clientX; yStart = event.clientY; hideSearch(); });
@@ -291,6 +294,20 @@ function factoryReset() {
 function addWindow(id, title, contStr, w, h, type) {
   oftenUsed[id]++;
   localStorage.setItem("oftenUsed", oftenUsed);
+
+  // Check for user-created app
+  if (id < programData.length - hiddenApps && !programData[id].icon.url) {
+    var desktopIcons = document.getElementsByClassName("desktoplink");
+    var customUrl = desktopIcons[id] ? desktopIcons[id].getAttribute("data-url") : null;
+    if (!customUrl) {
+      openPopup("No URL Set", "Please right-click this application and set a valid URL before opening it.");
+      return;
+    }
+    contStr = customUrl;
+    type = "html";
+    id = viewerID; // Use the viewer for user apps
+  }
+
   var tmpUrl = id == viewerID ? contStr : (id == 0 ? programData[id].url + "?" + (new Date().getTime()) : programData[id].url);
   var elem = document.createElement("div");
   elem.className = "window init";
