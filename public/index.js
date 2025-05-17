@@ -4,7 +4,7 @@ const input = document.getElementById('is')
 if (form && input) {
   form.addEventListener('submit', async (event) => {
     event.preventDefault()
-    processUrl(input.value) /* Change to : processUrl(input.value, '/iframe.html') if you want a url variable.*/
+    processUrl(input.value)
   })
 }
 
@@ -14,21 +14,6 @@ function registerServiceWorker() {
   })
 }
 
-/*
-# Old restriction code:
-
-    if (path) {
-      location.href = path
-    } else {
-      if (restrictedWebsites.includes(url)) { // if the url the user typed in is any of the urls in "restrictedWebsites" then,
-        document.write("This query is restricted by SuperNova. Please try another query.") // then--> display this message.
-      } else {  // if not,
-        window.location.href = __uv$config.prefix + __uv$config.encodeUrl(url) // if not--> continue encoding the url the user typed in.
-      }
-    }
-  });
-*/
-
 function processUrl(value, path) {
   registerServiceWorker().then(() => {
     let url = value.trim();
@@ -37,17 +22,27 @@ function processUrl(value, path) {
 
     sessionStorage.setItem('encodedUrl', __uv$config.encodeUrl(url));
 
-    const restrictedWebsites = ["Pornhub.com", "8Tube.xxx", "Redtube.com", "Kink.com", "YouJizz.com", "Xvideos.com", "YouPorn.com", "Brazzers.com", "fuck.com"];
-    
-    let isRestricted = false;
-    for (let i = 0; i < restrictedWebsites.length; i++) {
-      if (url.includes(restrictedWebsites[i])) {
-        isRestricted = true;
-        break;
-      }
-    }
+    const restrictedWebsites = new Set([
+      "pornhub.com", "8tube.xxx", "redtube.com", "kink.com", 
+      "youjizz.com", "xvideos.com", "youporn.com", 
+      "brazzers.com", "fuck.com"
+    ]);
 
-    if (isRestricted) {
+    const restrictedKeywords = [
+      "porn", "xxx", "adult", "sex", "nude", "erotic", "fetish"
+    ];
+
+    const normalizedUrl = new URL(url).hostname.replace(/^www\./, '').toLowerCase();
+
+    const isRestrictedWebsite = Array.from(restrictedWebsites).some(restricted => 
+      normalizedUrl === restricted || normalizedUrl.endsWith(`.${restricted}`)
+    );
+
+    const isRestrictedKeyword = restrictedKeywords.some(keyword => 
+      url.toLowerCase().includes(keyword)
+    );
+
+    if (isRestrictedWebsite || isRestrictedKeyword) {
       document.write("This query is restricted by SuperNova. Please try another query.");
     } else {
       if (path) {
@@ -60,7 +55,7 @@ function processUrl(value, path) {
 }
 
 function go(value) {
-  processUrl(value, false) /* Change to : processUrl(value, '/iframe.html') if you want a url variable.*/
+  processUrl(value, false)
 }
 
 function now(value) {
