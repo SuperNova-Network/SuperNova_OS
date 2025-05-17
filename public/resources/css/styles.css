@@ -152,7 +152,7 @@ body.scaling .content {
   position: absolute;
   width: 5vw;
   text-align: center;
-  font-family: monospace;
+  font-family: sans-serif;
   color: #ddd;
   margin-left: 0;
   font-size: 0.85vw;
@@ -409,7 +409,6 @@ body.scaling .content {
 }
 
 .promptbtn {
-  display: flex;
   background-color: #e5e5e5;
   border: none;
   width: 5vw;
