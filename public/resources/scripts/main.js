@@ -11,9 +11,9 @@ var lockTaskbar = true, lockTaskbah = false, hide = true, preventHide = false;
 var windows = [], origNames = [], winCount = 0, hiddenApps = 5, permaStickied = 2;  //permaStickied denotes the taskbar icons that cannot be unpinned, and so don't get included in the editable taskArr array.
 var last = 0;
 var contextAssort = [
-  [0, 1, 2, 3],
+  [0, 1, 2, 3, 18],
   [4, 5, 6, 7],
-  [8, 9, 10],
+  [8, 9, 10, 17],
   [11, 12],
   [6, 7],
   [7],
@@ -88,6 +88,60 @@ var defaultPage = "https://api.github.com/repos/SuperNova-Network/SuperNova-DY/c
 // https://web.postman.co/
 
 
+document.getElementsByClassName("contextitem")[17].addEventListener("mousedown", function () { makeApplication(); });
+function makeApplication() {
+  // Add a new blank app to programData
+  var newId = programData.length;
+  var newApp = {
+    name: "New Application",
+    url: "",
+    icon: {}, // No image
+    keywords: ""
+  };
+  programData.splice(programData.length - hiddenApps, 0, newApp); // Insert before system apps
+  oftenUsed.splice(programData.length - hiddenApps - 1, 0, 0);
+  origNames.splice(programData.length - hiddenApps - 1, 0, "New Application");
+
+  // Add to desktop
+  var parent = document.getElementById("desktop");
+  var el = document.createElement("div");
+  el.className = "desktoplink";
+  el.title = newApp.name;
+  el.setAttribute("selected", "false");
+  el.setAttribute("onclick", "selectIcon(event," + (programData.length - hiddenApps - 1) + ",false)");
+  el.addEventListener("mousedown", function (event) { showContext(event, 0) });
+  el.innerHTML = "<div class='icon'></div> <p class='ddesc'>" + newApp.name + "</p>";
+  setIcon(newApp.icon, el.getElementsByClassName("icon")[0]);
+  parent.appendChild(el);
+
+  // Immediately enter rename mode
+  setTimeout(function () {
+    editName(programData.length - hiddenApps - 1);
+  }, 10);
+}
+document.getElementsByClassName("contextitem")[18].addEventListener("mousedown", function () { contextSetUrl(); });
+function contextSetUrl() {
+  document.getElementById("context").style.display = "none";
+  var id = parseInt(document.getElementById("context").getAttribute("target"));
+  // Only allow for user-created apps (no icon, url is empty)
+  if (!programData[id] || programData[id].icon.url || id < 0 || id >= programData.length - hiddenApps) return;
+
+  // Prompt for URL
+  var url = prompt("Enter a valid URL for this application:");
+  if (!url) return;
+
+  // Validate URL
+  try {
+    new URL(url);
+  } catch (e) {
+    openPopup("Invalid URL", "Please enter a valid URL (including http:// or https://).");
+    return;
+  }
+
+  // Encode with proxy
+  programData[id].url = `${__uv$config.prefix}${__uv$config.encodeUrl(url)}`;
+  openPopup("URL Set", "URL has been set for this application.");
+}
 document.body.addEventListener("mousedown", function (event) { winSelect = true; xStart = event.clientX; yStart = event.clientY; hideSearch(); });
 document.body.addEventListener("mousemove", function (event) { try { moveWindow(event); } catch (e) { } });
 document.body.addEventListener("mouseup", function (event) { try { release(event); } catch (e) { } });
@@ -1157,6 +1211,13 @@ function showContext(evt, type) {
           context.setAttribute("targetIndex", i);
         }
       }
+      // Only show "Set URL" for user-created apps (no icon.url and not a system app)
+      var showSetUrl = false;
+      if (id >= 0 && id < programData.length - hiddenApps) {
+        var app = programData[id];
+        if (!app.icon.url) showSetUrl = true;
+      }
+      items[18].style.display = showSetUrl ? "block" : "none";
     } else if (type == 1 || type == 4 || type == 5) {
       var icons = document.getElementsByClassName("taskbaricon");
       for (var i = 0; i < icons.length; i++) {
