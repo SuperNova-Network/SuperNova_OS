@@ -179,7 +179,6 @@ function setup() {
     elem.style.backgroundColor = "#111";
   }, 500);
   loadRepos();
-  loadUserAppsFromStorage();
 
   //create cog
   document.getElementById("cog").setAttribute("d", genCog(19));
@@ -237,19 +236,6 @@ function factoryReset() {
 function addWindow(id, title, contStr, w, h, type) {
   oftenUsed[id]++;
   localStorage.setItem("oftenUsed", oftenUsed);
-
-  // Check for user-created app
-  if (id < programData.length - hiddenApps && !programData[id].icon.url) {
-    var desktopIcons = document.getElementsByClassName("desktoplink");
-    var customUrl = desktopIcons[id] ? desktopIcons[id].getAttribute("data-url") : null;
-    if (!customUrl) {
-      openPopup("No URL Set", "Please right-click this application and set a valid URL before opening it.");
-      return;
-    }
-    contStr = customUrl;
-    type = "html";
-    id = viewerID; // Use the viewer for user apps
-  }
 
   var tmpUrl = id == viewerID ? contStr : (id == 0 ? programData[id].url + "?" + (new Date().getTime()) : programData[id].url);
   var elem = document.createElement("div");
@@ -1233,8 +1219,6 @@ function showContext(evt, type) {
       showDelete = true;
     }
   }
-  items[18].style.display = showSetUrl ? "block" : "none";   // Set URL
-  items[19].style.display = showDelete ? "block" : "none";   // Delete Application
 }
 
 function contextOpen(evt, mult) {
