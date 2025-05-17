@@ -11,9 +11,9 @@ var lockTaskbar = true, lockTaskbah = false, hide = true, preventHide = false;
 var windows = [], origNames = [], winCount = 0, hiddenApps = 5, permaStickied = 2;  //permaStickied denotes the taskbar icons that cannot be unpinned, and so don't get included in the editable taskArr array.
 var last = 0;
 var contextAssort = [
-  [0, 1, 2, 3, 18],
+  [0, 1, 2, 3],
   [4, 5, 6, 7],
-  [8, 9, 10, 17],
+  [8, 9, 10],
   [11, 12],
   [6, 7],
   [7],
@@ -87,147 +87,6 @@ var viewerID = pl - 5, consoleID = pl - 4, errID = pl - 3, setID = pl - 2, explo
 var defaultPage = "https://api.github.com/repos/SuperNova-Network/SuperNova-DY/contents"; // go to https://api.github.com/users/SuperNova-Network/repos and find "contents_url" to get the url for the default page. EX: https://media.discordapp.net/attachments/828071279424307221/1203153358597394534/image.png?ex=65d00ee2&is=65bd99e2&hm=9a4f32904842838ea9a40c8f45e2b860491aee8c4b55cb6fa4b7f995f5f64aff&=&format=webp&quality=lossless&width=1439&height=206
 // https://web.postman.co/
 
-
-document.getElementsByClassName("contextitem")[17].addEventListener("mousedown", function () { makeApplication(); });
-function makeApplication() {
-  // Add a new blank app to programData
-  var newId = programData.length;
-  var newApp = {
-    name: "New Application",
-    url: "",
-    icon: {}, // No image
-    keywords: ""
-  };
-  programData.splice(programData.length - hiddenApps, 0, newApp); // Insert before system apps
-  oftenUsed.splice(programData.length - hiddenApps - 1, 0, 0);
-  origNames.splice(programData.length - hiddenApps - 1, 0, "New Application");
-
-  // Add to desktop
-  var parent = document.getElementById("desktop");
-  var el = document.createElement("div");
-  el.className = "desktoplink";
-  el.title = newApp.name;
-  el.setAttribute("selected", "false");
-  el.setAttribute("onclick", "selectIcon(event," + (programData.length - hiddenApps - 1) + ",false)");
-  el.addEventListener("mousedown", function (event) { showContext(event, 0) });
-  el.innerHTML = "<div class='icon'></div> <p class='ddesc'>" + newApp.name + "</p>";
-  setIcon(newApp.icon, el.getElementsByClassName("icon")[0]);
-  parent.appendChild(el);
-
-  // Immediately enter rename mode
-  setTimeout(function () {
-    editName(programData.length - hiddenApps - 1);
-  }, 10);
-  saveUserAppsToStorage();
-}
-document.getElementsByClassName("contextitem")[18].addEventListener("mousedown", function () { contextSetUrl(); });
-function contextSetUrl() {
-  document.getElementById("context").style.display = "none";
-  var id = parseInt(document.getElementById("context").getAttribute("target"));
-  // Only allow for user-created apps (no icon, url is empty)
-  if (!programData[id] || programData[id].icon.url || id < 0 || id >= programData.length - hiddenApps) return;
-
-  // Prompt for URL
-  var url = prompt("Enter a valid URL for this application:");
-  if (!url) return;
-
-  // Validate URL
-  try {
-    new URL(url);
-  } catch (e) {
-    openPopup("Invalid URL", "Please enter a valid URL (including http:// or https://).");
-    return;
-  }
-
-  // Set the URL as a data attribute on the desktop icon
-  var desktopIcons = document.getElementsByClassName("desktoplink");
-  if (desktopIcons[id]) {
-    desktopIcons[id].setAttribute("data-url", `${__uv$config.prefix}${__uv$config.encodeUrl(url)}`);
-  }
-  openPopup("URL Set", "URL has been set for this application.");
-  saveUserAppsToStorage();
-}
-function saveUserAppsToStorage() {
-  // Collect user apps (no icon.url and not system apps)
-  var userApps = [];
-  for (let i = 0; i < programData.length - hiddenApps; i++) {
-    if (!programData[i].icon.url) {
-      // Get custom URL from desktop icon if set
-      var desktopIcons = document.getElementsByClassName("desktoplink");
-      var customUrl = desktopIcons[i] ? desktopIcons[i].getAttribute("data-url") : "";
-      userApps.push({
-        name: programData[i].name,
-        url: customUrl || "",
-        icon: programData[i].icon,
-        keywords: programData[i].keywords
-      });
-    }
-  }
-  localStorage.setItem("userApps", JSON.stringify(userApps));
-}
-function loadUserAppsFromStorage() {
-  var userApps = JSON.parse(localStorage.getItem("userApps") || "[]");
-  for (let i = 0; i < userApps.length; i++) {
-    // Check if this app already exists in programData (by name)
-    let exists = false;
-    for (let j = 0; j < programData.length - hiddenApps; j++) {
-      if (
-        !programData[j].icon.url && 
-        programData[j].name === userApps[i].name
-      ) {
-        exists = true;
-        break;
-      }
-    }
-    if (!exists) {
-      // Insert before system apps
-      programData.splice(programData.length - hiddenApps, 0, {
-        name: userApps[i].name,
-        url: "", // We'll set data-url on the icon, not here
-        icon: userApps[i].icon || {},
-        keywords: userApps[i].keywords || ""
-      });
-      oftenUsed.splice(programData.length - hiddenApps - 1, 0, 0);
-      origNames.splice(programData.length - hiddenApps - 1, 0, userApps[i].name);
-
-      // Add to desktop
-      var parent = document.getElementById("desktop");
-      var el = document.createElement("div");
-      el.className = "desktoplink";
-      el.title = userApps[i].name;
-      el.setAttribute("selected", "false");
-      el.setAttribute("onclick", "selectIcon(event," + (programData.length - hiddenApps - 1) + ",false)");
-      el.setAttribute("data-url", userApps[i].url || "");
-      el.addEventListener("mousedown", function (event) { showContext(event, 0) });
-      el.innerHTML = "<div class='icon'></div> <p class='ddesc'>" + userApps[i].name + "</p>";
-      setIcon(userApps[i].icon || {}, el.getElementsByClassName("icon")[0]);
-      parent.appendChild(el);
-    }
-  }
-}
-document.getElementsByClassName("contextitem")[19].addEventListener("mousedown", function () { contextDeleteApp(); });
-function contextDeleteApp() {
-  document.getElementById("context").style.display = "none";
-  var id = parseInt(document.getElementById("context").getAttribute("target"));
-  if (!programData[id] || programData[id].icon.url || id < 0 || id >= programData.length - hiddenApps) return;
-
-  // Remove from programData, oftenUsed, origNames
-  programData.splice(id, 1);
-  oftenUsed.splice(id, 1);
-  origNames.splice(id, 1);
-
-  // Remove desktop icon
-  var desktopIcons = document.getElementsByClassName("desktoplink");
-  if (desktopIcons[id]) {
-    desktopIcons[id].parentNode.removeChild(desktopIcons[id]);
-  }
-
-  // Remove from localStorage
-  saveUserAppsToStorage();
-
-  // Optionally, refresh the desktop to update indices
-  // location.reload(); // Or call setup() if you want to redraw everything
-}
 document.body.addEventListener("mousedown", function (event) { winSelect = true; xStart = event.clientX; yStart = event.clientY; hideSearch(); });
 document.body.addEventListener("mousemove", function (event) { try { moveWindow(event); } catch (e) { } });
 document.body.addEventListener("mouseup", function (event) { try { release(event); } catch (e) { } });
@@ -1313,13 +1172,6 @@ function showContext(evt, type) {
           context.setAttribute("targetIndex", i);
         }
       }
-      // Only show "Set URL" for user-created apps (no icon.url and not a system app)
-      var showSetUrl = false;
-      if (id >= 0 && id < programData.length - hiddenApps) {
-        var app = programData[id];
-        if (!app.icon.url) showSetUrl = true;
-      }
-      items[18].style.display = showSetUrl ? "block" : "none";
     } else if (type == 1 || type == 4 || type == 5) {
       var icons = document.getElementsByClassName("taskbaricon");
       for (var i = 0; i < icons.length; i++) {
