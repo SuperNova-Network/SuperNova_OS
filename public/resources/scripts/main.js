@@ -205,6 +205,29 @@ function loadUserAppsFromStorage() {
     }
   }
 }
+document.getElementsByClassName("contextitem")[19].addEventListener("mousedown", function () { contextDeleteApp(); });
+function contextDeleteApp() {
+  document.getElementById("context").style.display = "none";
+  var id = parseInt(document.getElementById("context").getAttribute("target"));
+  if (!programData[id] || programData[id].icon.url || id < 0 || id >= programData.length - hiddenApps) return;
+
+  // Remove from programData, oftenUsed, origNames
+  programData.splice(id, 1);
+  oftenUsed.splice(id, 1);
+  origNames.splice(id, 1);
+
+  // Remove desktop icon
+  var desktopIcons = document.getElementsByClassName("desktoplink");
+  if (desktopIcons[id]) {
+    desktopIcons[id].parentNode.removeChild(desktopIcons[id]);
+  }
+
+  // Remove from localStorage
+  saveUserAppsToStorage();
+
+  // Optionally, refresh the desktop to update indices
+  // location.reload(); // Or call setup() if you want to redraw everything
+}
 document.body.addEventListener("mousedown", function (event) { winSelect = true; xStart = event.clientX; yStart = event.clientY; hideSearch(); });
 document.body.addEventListener("mousemove", function (event) { try { moveWindow(event); } catch (e) { } });
 document.body.addEventListener("mouseup", function (event) { try { release(event); } catch (e) { } });
@@ -1349,6 +1372,17 @@ function showContext(evt, type) {
     evt.stopPropagation();
     //preventHide=true;
   }
+   var showSetUrl = false;
+   var showDelete = false;
+  if (id >= 0 && id < programData.length - hiddenApps) {
+    var app = programData[id];
+    if (!app.icon.url) {
+      showSetUrl = true;
+      showDelete = true;
+    }
+  }
+  items[18].style.display = showSetUrl ? "block" : "none";   // Set URL
+  items[19].style.display = showDelete ? "block" : "none";   // Delete Application
 }
 
 function contextOpen(evt, mult) {
