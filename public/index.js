@@ -9,19 +9,9 @@ if (form && input) {
 }
 
 function registerServiceWorker() {
-  if (!navigator.serviceWorker) {
-    throw new Error('Service Workers not supported');
-  }
-  
-  return navigator.serviceWorker.register('./sw.js', {
+  return window.navigator.serviceWorker.register('./sw.js', {
     scope: __uv$config.prefix,
-  }).then(registration => {
-    console.log('Service Worker registered successfully:', registration);
-    return registration;
-  }).catch(error => {
-    console.error('Service Worker registration failed:', error);
-    throw error;
-  });
+  })
 }
 
 function processUrl(value, path) {
