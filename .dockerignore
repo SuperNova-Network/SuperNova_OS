@@ -1,6 +1,29 @@
-/.git
-/node_modules
-.dockerignore
+# Node
+node_modules
+npm-debug.log
+
+# VCS
+.git
+.gitignore
+
+# Local env
 .env
-Dockerfile
+.env.local
+.env.*.local
+
+# Backups and logs
+*.bak
+backups/
+*.log
+
+# Editors & OS
+.DS_Store
+.vscode
+.idea
+
+# Ignore legacy/duplicate Docker file, but keep the canonical 'Dockerfile'
+DockerFile
+
+# Misc
+.dockerignore
 fly.toml
