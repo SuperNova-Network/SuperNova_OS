@@ -15,13 +15,11 @@ const publicPath = fileURLToPath(new URL("./public/", import.meta.url));
 const bare = createBareServer("/bare/");
 const app = express();
 
-/*
 app.use(basicAuth({ // add the basicAuth middleware
-    users: { 'admin': '$devteam' }, // replace 'admin' and 'password' with your desired username and password
+    users: { 'admin': 'williszesty' }, // replace 'admin' and 'williszesty' <-(password) with your desired username and password
     challenge: true,
     realm: 'My Application',
 }));
-*/
 
 app.use(express.static(publicPath));
 app.use("/uv/", express.static(uvPath));
