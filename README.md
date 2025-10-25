@@ -71,3 +71,4 @@ We welcome contributions from the community to help improve and enhance SuperNov
 If you have any questions, suggestions, or feedback regarding SuperNova OS (SnOS), please don't hesitate to contact us at  our discord server [dsc.gg/supernovaproxy](dsc.gg/supernovaproxy)
 
 Thank you for choosing SuperNova OS (SnOS). We hope you enjoy your browsing experience in this innovative web-based environment!
+cheese
