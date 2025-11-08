@@ -17,7 +17,7 @@ function registerServiceWorker() {
 function processUrl(value, path) {
   registerServiceWorker().then(() => {
     let url = value.trim();
-    if (!isUrl(url)) url = 'https://www.google.com/search?q=' + url;
+    if (!isUrl(url)) url = 'https://search.brave.com/search?q=' + url;
     else if (!(url.startsWith('https://') || url.startsWith('http://'))) url = 'https://' + url;
 
     sessionStorage.setItem('encodedUrl', __uv$config.encodeUrl(url));
